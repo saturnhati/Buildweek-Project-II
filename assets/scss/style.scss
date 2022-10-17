@@ -81,11 +81,13 @@ body {
 
 .main-container {
     background-color: #121212;
-    background: linear-gradient(180deg, rgba(88,22,66,1) 0%, rgba(18,18,18,1) 100%);
     width: 100%;
     height: calc(100vh - 100.8px);
     overflow-y: scroll;
     header {
+        background-color: rgba(88,22,66,1);
+        position: sticky;
+        top: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -115,6 +117,7 @@ body {
         }
     }
     .main-content {
+        background: linear-gradient(180deg, rgba(88,22,66,1) 0%, rgba(18,18,18,1) 100%);
         display: flex;
         flex-direction: column;
         padding: {
@@ -127,6 +130,62 @@ body {
             font-size: 2rem;
             text-decoration: none;
             color: lightgray;
+        }
+        .hero {
+            padding: {
+                top: 2rem;
+                bottom: 2rem;
+                left: 1rem;
+                right: 1rem;
+            }
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: linear-gradient(215deg, rgba(88,22,66,0) 0%, rgba(18,18,18,1) 100%);
+            #hero-image {
+                width: 220px;
+                height: 220px;
+            } 
+            .hero-info {
+                h1 {
+                    color: white;
+                    margin: 0;
+                    font-size: 5rem;
+                    margin-left: -5px; // è orribile lo toglierò è MOSTRUOSO
+                }  
+                h3 {
+                    margin: {
+                        top: 0;
+                        bottom: 1rem;
+                    }
+                    color: white;
+                }
+                p {
+                    margin-top: 0;
+                    font-size: 0.8rem;
+                    color: white;
+                }
+                p:nth-of-type(2) {
+                    font-size: 1.2rem;
+                }
+                button {
+                    margin-right: 1rem;
+                    width: 100px;
+                    height: 50px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    background-color: #1ED760;
+                    border-radius: 25px;
+                    border: none;
+                    letter-spacing: 1px;
+                }
+                button:nth-of-type(2) {
+                    color: white;
+                    background-color: black;
+                    outline: 1px solid rgb(149, 149, 149);
+                }
+            } 
         }
         
     }

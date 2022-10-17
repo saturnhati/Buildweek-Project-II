@@ -70,12 +70,14 @@ body {
 
 .main-container {
   background-color: #121212;
-  background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 100%);
   width: 100%;
   height: calc(100vh - 100.8px);
   overflow-y: scroll;
 }
 .main-container header {
+  background-color: rgb(88, 22, 66);
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,6 +103,7 @@ body {
   color: white;
 }
 .main-container .main-content {
+  background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 100%);
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
@@ -112,6 +115,56 @@ body {
   font-size: 2rem;
   text-decoration: none;
   color: lightgray;
+}
+.main-container .main-content .hero {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(215deg, rgba(88, 22, 66, 0) 0%, rgb(18, 18, 18) 100%);
+}
+.main-container .main-content .hero #hero-image {
+  width: 220px;
+  height: 220px;
+}
+.main-container .main-content .hero .hero-info h1 {
+  color: white;
+  margin: 0;
+  font-size: 5rem;
+  margin-left: -5px;
+}
+.main-container .main-content .hero .hero-info h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: white;
+}
+.main-container .main-content .hero .hero-info p {
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: white;
+}
+.main-container .main-content .hero .hero-info p:nth-of-type(2) {
+  font-size: 1.2rem;
+}
+.main-container .main-content .hero .hero-info button {
+  margin-right: 1rem;
+  width: 100px;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #1ED760;
+  border-radius: 25px;
+  border: none;
+  letter-spacing: 1px;
+}
+.main-container .main-content .hero .hero-info button:nth-of-type(2) {
+  color: white;
+  background-color: black;
+  outline: 1px solid rgb(149, 149, 149);
 }
 
 footer {
