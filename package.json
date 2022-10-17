@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/saturnhati/U2-W7-Buildweek2#readme",
   "dependencies": {
+    "google-fonts": "^1.0.0",
     "sass": "^1.55.0"
   }
 }
