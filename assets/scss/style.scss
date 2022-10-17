@@ -1,5 +1,7 @@
 @import './buttons.scss';
 
+// GENERAL
+
 * {
     box-sizing: border-box;
     font-family: 'Figtree', sans-serif;
@@ -32,6 +34,8 @@ body {
     height: 100vh;
     max-height: 100vh;
 }
+
+// SIDE COLUMNS
 
 .side-column {
     color: lightgray;
@@ -73,35 +77,7 @@ body {
     }
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: {
-        top: 1rem;
-        bottom: 1rem;
-        left: 2rem;
-        right: 2rem;
-    }
-    .nav-icons {
-        color: rgb(255 255 255 / .5);
-        i {
-            font-size: 1.5rem;
-            background-color: rgb(0 0 0 / .4);
-            padding: {
-                top: 5px;
-                bottom: 3px;
-                left: 8px;
-                right: 8px;
-            }
-            margin-right: 1rem;
-            border-radius: 50%;
-        }
-    }
-    .account-dropdown {
-        color: white;
-    }
-}
+// CENTRAL MAIN SECTION
 
 .main-container {
     background-color: #121212;
@@ -109,69 +85,111 @@ header {
     width: 100%;
     height: calc(100vh - 100.8px);
     overflow-y: scroll;
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: {
+            top: 1rem;
+            bottom: 1rem;
+            left: 2rem;
+            right: 2rem;
+        }
+        .nav-icons {
+            color: rgb(255 255 255 / .5);
+            i {
+                font-size: 1.5rem;
+                background-color: rgb(0 0 0 / .4);
+                padding: {
+                    top: 5px;
+                    bottom: 3px;
+                    left: 8px;
+                    right: 8px;
+                }
+                margin-right: 1rem;
+                border-radius: 50%;
+            }
+        }
+        .account-dropdown {
+            color: white;
+        }
+    }
     .main-content {
         display: flex;
         flex-direction: column;
+        padding: {
+            top: 1rem;
+            bottom: 1rem;
+            left: 2rem;
+            right: 2rem;
+        }
+        a {
+            font-size: 2rem;
+            text-decoration: none;
+            color: lightgray;
+        }
+        
     }
 }
+
+// FOOTER PLAYER
 
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-.footer {
-    padding: {
-        left: 2rem;
-        right: 2rem;
-        top: 1rem;
-        bottom: 1rem;
-    }
-    height: 7rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #181818;
-    color: rgb(94, 94, 94);
-    .player-listening {
-        flex-basis: 225px;
-    }
-    .player-main {
-        .player-icons {
-            flex-basis: 1;
-            text-align: center;
-            i {
-                font-size: 1.3rem;
-                margin: {
-                    left: 11px;
-                    right: 11px;
+    .footer {
+        padding: {
+            left: 2rem;
+            right: 2rem;
+            top: 1rem;
+            bottom: 1rem;
+        }
+        height: 7rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #181818;
+        color: rgb(94, 94, 94);
+        .player-listening {
+            flex-basis: 225px;
+        }
+        .player-main {
+            .player-icons {
+                flex-basis: 1;
+                text-align: center;
+                i {
+                    font-size: 1.3rem;
+                    margin: {
+                        left: 11px;
+                        right: 11px;
+                    }
+                }
+                i:nth-of-type(3){
+                    font-size: 2.2rem;
+                }
+                i:nth-of-type(3):hover{
+                    transform: scale(1.05);
                 }
             }
-            i:nth-of-type(3){
-                font-size: 2.2rem;
-            }
-            i:nth-of-type(3):hover{
-                transform: scale(1.05);
+            .player-bar {
+                text-align: center;
+                margin-top: 12px;
             }
         }
-        .player-bar {
-            text-align: center;
-            margin-top: 12px;
-        }
-    }
-    .player-opt {
-        flex-basis: 225px;
-        i {
-            margin: {
-                left: 8px;
-                right: 8px;
-            } 
-            font-size: 1.1rem;
-            color: lightgray;
-        }
-        i:nth-of-type(4){
-            color: rgb(94, 94, 94);
+        .player-opt {
+            flex-basis: 225px;
+            i {
+                margin: {
+                    left: 8px;
+                    right: 8px;
+                } 
+                font-size: 1.1rem;
+                color: lightgray;
+            }
+            i:nth-of-type(4){
+                color: rgb(94, 94, 94);
+            }
         }
     }
 }

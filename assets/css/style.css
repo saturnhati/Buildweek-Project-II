@@ -68,7 +68,14 @@ body {
   overflow-y: scroll;
 }
 
-header {
+.main-container {
+  background-color: #121212;
+  background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 100%);
+  width: 100%;
+  height: calc(100vh - 100.8px);
+  overflow-y: scroll;
+}
+.main-container header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,10 +84,10 @@ header {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-header .nav-icons {
+.main-container header .nav-icons {
   color: rgba(255, 255, 255, 0.5);
 }
-header .nav-icons i {
+.main-container header .nav-icons i {
   font-size: 1.5rem;
   background-color: rgba(0, 0, 0, 0.4);
   padding-top: 5px;
@@ -90,20 +97,21 @@ header .nav-icons i {
   margin-right: 1rem;
   border-radius: 50%;
 }
-header .account-dropdown {
+.main-container header .account-dropdown {
   color: white;
-}
-
-.main-container {
-  background-color: #121212;
-  background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 100%);
-  width: 100%;
-  height: calc(100vh - 100.8px);
-  overflow-y: scroll;
 }
 .main-container .main-content {
   display: flex;
   flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.main-container .main-content a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: lightgray;
 }
 
 footer {
@@ -111,8 +119,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
-
-.footer {
+footer .footer {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 1rem;
@@ -124,37 +131,37 @@ footer {
   background-color: #181818;
   color: rgb(94, 94, 94);
 }
-.footer .player-listening {
+footer .footer .player-listening {
   flex-basis: 225px;
 }
-.footer .player-main .player-icons {
+footer .footer .player-main .player-icons {
   flex-basis: 1;
   text-align: center;
 }
-.footer .player-main .player-icons i {
+footer .footer .player-main .player-icons i {
   font-size: 1.3rem;
   margin-left: 11px;
   margin-right: 11px;
 }
-.footer .player-main .player-icons i:nth-of-type(3) {
+footer .footer .player-main .player-icons i:nth-of-type(3) {
   font-size: 2.2rem;
 }
-.footer .player-main .player-icons i:nth-of-type(3):hover {
+footer .footer .player-main .player-icons i:nth-of-type(3):hover {
   transform: scale(1.05);
 }
-.footer .player-main .player-bar {
+footer .footer .player-main .player-bar {
   text-align: center;
   margin-top: 12px;
 }
-.footer .player-opt {
+footer .footer .player-opt {
   flex-basis: 225px;
 }
-.footer .player-opt i {
+footer .footer .player-opt i {
   margin-left: 8px;
   margin-right: 8px;
   font-size: 1.1rem;
   color: lightgray;
 }
-.footer .player-opt i:nth-of-type(4) {
+footer .footer .player-opt i:nth-of-type(4) {
   color: rgb(94, 94, 94);
 }
