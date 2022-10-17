@@ -117,11 +117,11 @@ body {
         }
     }
     .main-content {
-        background: linear-gradient(180deg, rgba(88,22,66,1) 0%, rgba(18,18,18,1) 100%);
+        background: linear-gradient(180deg, rgba(88,22,66,1) 0%, rgba(18,18,18,1) 30%);
         display: flex;
         flex-direction: column;
         padding: {
-            top: 1rem;
+            top: 0;
             bottom: 1rem;
             left: 2rem;
             right: 2rem;
@@ -154,12 +154,18 @@ body {
                     font-size: 5rem;
                     margin-left: -5px; // è orribile lo toglierò è MOSTRUOSO
                 }  
+                h1:hover {
+                    text-decoration: underline;
+                }
                 h3 {
                     margin: {
                         top: 0;
                         bottom: 1rem;
                     }
                     color: white;
+                }
+                h3:hover {
+                    text-decoration: underline;
                 }
                 p {
                     margin-top: 0;
@@ -178,16 +184,99 @@ body {
                     background-color: #1ED760;
                     border-radius: 25px;
                     border: none;
-                    letter-spacing: 1px;
+                    letter-spacing: 0.50pt;
+                }
+                button:hover {
+                    transform: scale(1.05);
                 }
                 button:nth-of-type(2) {
                     color: white;
                     background-color: black;
                     outline: 1px solid rgb(149, 149, 149);
                 }
+                button:nth-of-type(2):hover {
+                    transform: scale(1.05);
+                    outline: 1px solid rgb(255, 255, 255);
+                }
+                i {
+                    margin-left: 1rem;
+                    font-size: 1.6rem;
+                    color: gray;
+                }
+                i:hover {
+                    color: white;
+                }
             } 
         }
-        
+    }
+    h2 {
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+    }
+    .playlist {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+    }
+    .playlist-card {
+        color: white;
+        align-items: center;
+        flex-basis: 31%;
+        overflow: hidden;
+        border-radius: 4px;
+        background-color: rgb(255 255 255 / .1);
+        display: flex;
+        gap: 1.1rem;
+        h3 {
+            font-size: 1.1rem;
+        }
+        img {
+            width: 80px;
+        }
+    }
+    .recent-album {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3.6rem;
+        overflow: hidden;
+        .album-card {
+            width: 210px;
+            background-color: rgb(25, 25, 25);
+            padding: {
+                top: 1rem;
+                bottom: 1.2rem;
+                left: 1rem;
+                right: 1rem;
+            }
+            margin: {
+                top: 1rem;
+                bottom: 1rem;
+            }
+            border-radius: 6px;
+            transition: .4s;
+            img {
+                width: 180px;
+                border-radius: 4px;
+            }
+            h3 {
+                font-size: 1.1rem;
+                color: white;
+                margin-bottom: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            h4 {
+                margin-bottom: 0;
+                font-size: 1rem;
+                color: gray;
+            }
+        }
+        .album-card:hover {
+            background-color: #282828;
+        }
     }
 }
 

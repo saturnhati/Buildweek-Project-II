@@ -103,10 +103,10 @@ body {
   color: white;
 }
 .main-container .main-content {
-  background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 100%);
+  background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 30%);
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 0;
   padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -137,10 +137,16 @@ body {
   font-size: 5rem;
   margin-left: -5px;
 }
+.main-container .main-content .hero .hero-info h1:hover {
+  text-decoration: underline;
+}
 .main-container .main-content .hero .hero-info h3 {
   margin-top: 0;
   margin-bottom: 1rem;
   color: white;
+}
+.main-container .main-content .hero .hero-info h3:hover {
+  text-decoration: underline;
 }
 .main-container .main-content .hero .hero-info p {
   margin-top: 0;
@@ -159,12 +165,92 @@ body {
   background-color: #1ED760;
   border-radius: 25px;
   border: none;
-  letter-spacing: 1px;
+  letter-spacing: 0.5pt;
+}
+.main-container .main-content .hero .hero-info button:hover {
+  transform: scale(1.05);
 }
 .main-container .main-content .hero .hero-info button:nth-of-type(2) {
   color: white;
   background-color: black;
   outline: 1px solid rgb(149, 149, 149);
+}
+.main-container .main-content .hero .hero-info button:nth-of-type(2):hover {
+  transform: scale(1.05);
+  outline: 1px solid rgb(255, 255, 255);
+}
+.main-container .main-content .hero .hero-info i {
+  margin-left: 1rem;
+  font-size: 1.6rem;
+  color: gray;
+}
+.main-container .main-content .hero .hero-info i:hover {
+  color: white;
+}
+.main-container h2 {
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+}
+.main-container .playlist {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+}
+.main-container .playlist-card {
+  color: white;
+  align-items: center;
+  flex-basis: 31%;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 1.1rem;
+}
+.main-container .playlist-card h3 {
+  font-size: 1.1rem;
+}
+.main-container .playlist-card img {
+  width: 80px;
+}
+.main-container .recent-album {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.6rem;
+  overflow: hidden;
+}
+.main-container .recent-album .album-card {
+  width: 210px;
+  background-color: rgb(25, 25, 25);
+  padding-top: 1rem;
+  padding-bottom: 1.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  transition: 0.4s;
+}
+.main-container .recent-album .album-card img {
+  width: 180px;
+  border-radius: 4px;
+}
+.main-container .recent-album .album-card h3 {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-container .recent-album .album-card h4 {
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: gray;
+}
+.main-container .recent-album .album-card:hover {
+  background-color: #282828;
 }
 
 footer {
