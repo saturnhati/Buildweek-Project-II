@@ -18,8 +18,8 @@
   margin-bottom: 12px;
 }
 .main-container .artist-page {
-  padding: 1rem 2rem;
   background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 30%);
+  padding: 1rem 2rem;
 }
 .main-container .artist-page .artist-pad {
   margin-top: 1rem;
@@ -565,7 +565,7 @@ footer .footer .player-opt .slidecontainer .slider {
 footer .footer .player-opt .slidecontainer .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 4px;
+  width: 10px;
   height: 4px;
   border-radius: 4px;
   background: white;
