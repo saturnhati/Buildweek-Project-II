@@ -98,9 +98,11 @@
                         }
                         #artist-followers:hover {
                             color: white;
+                            cursor: default;
                         }
                         #artist-time {
                             color: gray;
+                            cursor: default;
                         }
                     }
                     li:hover {

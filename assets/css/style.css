@@ -102,9 +102,11 @@
 }
 .main-container .artist-page .artist-songs .popular-songs ol li #artist-followers:hover {
   color: white;
+  cursor: default;
 }
 .main-container .artist-page .artist-songs .popular-songs ol li #artist-time {
   color: gray;
+  cursor: default;
 }
 .main-container .artist-page .artist-songs .popular-songs ol li:hover {
   background-color: rgba(255, 255, 255, 0.1);
