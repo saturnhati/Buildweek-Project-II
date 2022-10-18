@@ -52,14 +52,21 @@ body {
     a {
         text-decoration: none;
         color: lightgray;
+        display: flex;
+        align-items: center;
         margin: {
-            top: 9px;
-            bottom: 9px;
+            top: 16px;
+            bottom: 16px;
+        }
+        img {
+            width: 25px;
+            border-radius: 2px;
+            margin-right: 20px;
         }
     }
     i {
         margin-right: 20px;
-        font-size: 1.4rem;
+        font-size: 1.7rem;
     }
     hr {
         width: 100%;
@@ -70,10 +77,30 @@ body {
             bottom: none;
         }
     }
+    .second-nav {
+        margin-top: .8rem;
+        i {
+            font-size: 2rem;
+        }
+        a {
+            display: flex;
+            align-items: center;
+        }
+    }
     .playlist {
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
+        a {
+            margin: {
+                top: .8rem;
+                bottom: .8rem;
+            }
+        }
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
     }
 }
 
@@ -423,6 +450,27 @@ footer {
         color: rgb(94, 94, 94);
         .player-listening {
             flex-basis: 240px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 1.3rem;
+            align-content: center;
+            p:nth-of-type(1){
+                color: white;
+                margin-bottom: 4px;
+            }
+            p:nth-of-type(2){
+                font-size: .7rem;
+                color: lightgray;
+                margin-top: 4px;
+            }
+            i {
+                align-self: center;
+                margin-left: 10px;
+                color:#1ED760;
+            }
+            img {
+                width: 65px;
+            }
         }
         .player-main {
             .player-icons {
