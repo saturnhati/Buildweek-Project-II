@@ -28,6 +28,6 @@ function openDropdown() {
     let icondown = document.querySelector('.fa-caret-down')
     let iconup = document.querySelector('.fa-caret-up')
     dropdown.classList.toggle('visible')
-    icondown.classList.toggle('visible-icon')
-    iconup.classList.toggle('visible-icon')
+    icondown.classList.toggle('invisible-icon')
+    iconup.classList.toggle('invisible-icon')
 }

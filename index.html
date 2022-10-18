@@ -61,7 +61,7 @@
         <header>
           <div class="nav-icons"><i class="fa-solid fa-chevron-left"></i><i class="fa-solid fa-chevron-right"></i></div>
           <div class="dropdown-container">
-            <div class="dropdown"><img src="./assets/img/avatar.jpg" />username <i onclick="openDropdown()" id="icon-down" class="fa-solid fa-caret-down visible-icon"></i><i onclick="openDropdown()" id="icon-up" class="fa-solid fa-caret-up"></i></div>
+            <div class="dropdown"><img src="./assets/img/avatar.jpg" />username <i onclick="openDropdown()" id="icon-down" class="fa-solid fa-caret-down"></i><i onclick="openDropdown()" id="icon-up" class="fa-solid fa-caret-up invisible-icon"></i></div>
             <div id="dropdown-menu" class="dropdown-menu">
               <a href="#">Account <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               <a href="#">Profilo</a>
@@ -269,7 +269,9 @@
           <i class="fa-solid fa-bars"></i>
           <i class="fa-solid fa-link"></i>
           <i class="fa-solid fa-volume-high"></i>
-          -----------------
+          <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange" />
+          </div>
           <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
         </div>
       </div>
