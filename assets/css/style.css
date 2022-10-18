@@ -1,3 +1,144 @@
+.main-container .artist-hero {
+  padding: 1rem 2rem;
+  background-color: darkslategrey;
+}
+.main-container .artist-hero h3 {
+  color: white;
+  margin-top: 150px;
+}
+.main-container .artist-hero h1 {
+  color: white;
+  font-size: 5rem;
+  margin-top: 25px;
+}
+.main-container .artist-hero p {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 50px;
+  margin-bottom: 12px;
+}
+.main-container .artist-page {
+  padding: 1rem 2rem;
+  background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 30%);
+}
+.main-container .artist-page .artist-pad {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+.main-container .artist-page .artist-pad .buttonplay {
+  text-align: center;
+  background-color: #1ED760;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  margin-right: 2.5rem;
+}
+.main-container .artist-page .artist-pad .buttonplay i {
+  font-size: 1.7rem;
+  padding-left: 4px;
+}
+.main-container .artist-page .artist-pad .buttonplay:hover {
+  transform: scale(1.05);
+}
+.main-container .artist-page .artist-pad .buttonfollow {
+  width: 77px;
+  height: 31px;
+  background-color: transparent;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.6pt;
+  border-radius: 4px;
+  margin-right: 2.5rem;
+  border: 1px solid gray;
+}
+.main-container .artist-page .artist-pad .buttonfollow:hover {
+  border: 1px solid white;
+}
+.main-container .artist-page .artist-pad .dots {
+  margin-left: 1rem;
+  font-size: 1.6rem;
+  color: gray;
+}
+.main-container .artist-page .artist-pad .dots:hover {
+  color: white;
+}
+.main-container .artist-page .artist-songs {
+  display: flex;
+}
+.main-container .artist-page .artist-songs .popular-songs {
+  width: 60%;
+  margin-right: 4rem;
+}
+.main-container .artist-page .artist-songs .popular-songs h2 {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 600;
+}
+.main-container .artist-page .artist-songs .popular-songs ol {
+  color: white;
+}
+.main-container .artist-page .artist-songs .popular-songs ol li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.1rem;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.main-container .artist-page .artist-songs .popular-songs ol li span {
+  font-size: 1.1rem;
+}
+.main-container .artist-page .artist-songs .popular-songs ol li .artist-imgtitle {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 350px;
+}
+.main-container .artist-page .artist-songs .popular-songs ol li #artist-followers {
+  color: gray;
+}
+.main-container .artist-page .artist-songs .popular-songs ol li #artist-followers:hover {
+  color: white;
+  cursor: default;
+}
+.main-container .artist-page .artist-songs .popular-songs ol li #artist-time {
+  color: gray;
+  cursor: default;
+}
+.main-container .artist-page .artist-songs .popular-songs ol li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.main-container .artist-page .artist-songs .favourite-songs {
+  width: 30%;
+}
+.main-container .artist-page .artist-songs .favourite-songs h2 {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 600;
+}
+.main-container .artist-page .artist-songs .favourite-songs .artist-like {
+  display: flex;
+}
+.main-container .artist-page .artist-songs .favourite-songs .artist-like img {
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers h3 {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers h3:hover {
+  text-decoration: underline;
+}
+.main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers p {
+  color: gray;
+  font-size: 1rem;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Figtree", sans-serif;
