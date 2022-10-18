@@ -1,0 +1,143 @@
+.main-container {    
+        .artist-hero {
+            padding: 1rem 2rem;
+            background-color: darkslategrey;
+            h3 {
+                color: white;
+                margin-top: 150px;
+            }
+            h1 {
+                color: white;
+                font-size: 5rem;
+                margin-top: 25px;
+            }
+            p {
+                color: white;
+                font-size: 1.2rem;
+                margin-top: 50px;
+                margin-bottom: 12px;
+            }
+        }
+    .artist-page {
+        padding: 1rem 2rem;
+        background: linear-gradient(180deg, rgba(88,22,66,1) 0%, rgba(18,18,18,1) 30%);
+        .artist-pad {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            .buttonplay {
+                text-align: center;
+                background-color: #1ED760;
+                width: 58px;
+                height: 58px;
+                border-radius: 50%;
+                border: none;
+                margin-right: 2.5rem;
+                i {
+                    font-size: 1.7rem;
+                    padding-left: 4px;
+                }
+            }
+            .buttonplay:hover {
+                transform: scale(1.05);
+            }
+            .buttonfollow {
+                width: 77px;
+                height: 31px;
+                background-color: transparent;
+                color: white;
+                font-size: 0.9rem;
+                font-weight: 600;
+                letter-spacing: 0.60pt;
+                border-radius: 4px;
+                margin-right: 2.5rem;
+                border: 1px solid gray;
+            }
+            .buttonfollow:hover {
+                border: 1px solid white;
+            }
+            .dots {
+                margin-left: 1rem;
+                font-size: 1.6rem;
+                color: gray;
+            }
+            .dots:hover {
+                color: white;
+            }
+        }
+        .artist-songs {
+            display: flex;
+            .popular-songs {
+                width: 60%;
+                margin-right: 4rem;
+                h2 {
+                    font-size: 1.8rem;
+                    color: white;
+                    font-weight: 600;
+                }
+                ol {
+                    color: white;
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1.1rem;
+                        border-radius: 4px;
+                        padding: 1rem;
+                        span {
+                            font-size: 1.1rem;
+                        }
+                        .artist-imgtitle {
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            width: 350px;
+                        }
+                        #artist-followers {
+                            color: gray;
+                        }
+                        #artist-followers:hover {
+                            color: white;
+                        }
+                        #artist-time {
+                            color: gray;
+                        }
+                    }
+                    li:hover {
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                }
+            }
+            .favourite-songs {
+                width: 30%;
+                h2 {
+                    font-size: 1.8rem;
+                    color: white;
+                    font-weight: 600;
+                }
+                .artist-like {
+                    display: flex;
+                    img {
+                        border-radius: 50%;
+                        margin-right: 15px;
+                    }
+                    .artist-likers {
+                        h3 {
+                            color: white;
+                            font-size: 1.1rem;
+                            font-weight: 600;
+                        }
+                        h3:hover {
+                            text-decoration: underline;
+                        }
+                        p {
+                            color: gray;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

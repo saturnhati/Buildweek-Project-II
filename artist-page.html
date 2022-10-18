@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script src="https://kit.fontawesome.com/51292258d4.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/51292258d4.js"
+      crossorigin="anonymous"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>SPOTIFY HOMEPAGE</title>
@@ -59,14 +62,137 @@
       <!-- MAIN CONTENT -->
       <div class="main-container">
         <header>
-          <div class="nav-icons"><i class="fa-solid fa-chevron-left"></i><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="nav-icons">
+            <i class="fa-solid fa-chevron-left"></i
+            ><i class="fa-solid fa-chevron-right"></i>
+          </div>
           <div class="account-dropdown">prova</div>
         </header>
-        <div class="main-content">
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
+        <div class="artist-hero">
+          <h3><i class="fa-solid fa-check"></i> Artista verificato</h3>
+          <h1>Artista</h1>
+          <p>Millemila ascoltatori mensili</p>
+        </div>
+        <div class="artist-page">
+          <div class="artist-pad">
+            <button class="buttonplay"><i class="fa-solid fa-play"></i></button
+            ><button class="buttonfollow">SEGUI</button>
+            <i class="fa-solid fa-ellipsis dots"></i>
+          </div>
+          <div class="artist-songs">
+            <div class="popular-songs">
+              <h2>Popolari</h2>
+              <ol>
+                <li>
+                  <div class="artist-imgtitle">
+                    <img src="https://picsum.photos/40/40" alt="" />
+                    <span id="artist-song">Song</span>
+                  </div>
+                  <span id="artist-followers">Ascoltatori</span
+                  ><span id="artist-time">duration</span>
+                </li>
+                <li>
+                  <div class="artist-imgtitle">
+                    <img src="https://picsum.photos/40/40" alt="" />
+                    <span id="artist-song">Song</span>
+                  </div>
+                  <span id="artist-followers">Ascoltatori</span
+                  ><span id="artist-time">duration</span>
+                </li>
+              </ol>
+            </div>
+            <div class="favourite-songs">
+              <h2>Brano che ti piacciono</h2>
+              <div class="artist-like">
+                <img src="https://picsum.photos/80/80" alt="" />
+                <div class="artist-likers">
+                  <h3>Hai messo Mi piace a 13 brani</h3>
+                  <p>di Artista</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Buon pomeriggio</h2>
+        <div class="playlist">
+          <div class="playlist-card">
+            <img src="./assets/img/rotation.png" />
+            <h3>A rotazione</h3>
+          </div>
+          <div class="playlist-card">
+            <img src="./assets/img/discover.png" />
+            <h3>Discover Weekly</h3>
+          </div>
+          <div class="playlist-card">
+            <img src="./assets/img/thasup.png" />
+            <h3>Thasup Mix</h3>
+          </div>
+          <div class="playlist-card">
+            <img src="./assets/img/trex.png" />
+            <h3>Hangover Friendly Rock</h3>
+          </div>
+          <div class="playlist-card">
+            <img src="./assets/img/codingmode.png" />
+            <h3>Coding Mode</h3>
+          </div>
+          <div class="playlist-card">
+            <img src="./assets/img/lofi.png" />
+            <h3>Lofi hip hop - beats to relax/study to</h3>
+          </div>
+        </div>
+        <h2>Ascoltati di recente</h2>
+        <div class="recent-album">
+          <div class="album-card">
+            <img src="./assets/img/rotation.png" />
+            <h3>A rotazione</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/discover.png" />
+            <h3>Discover Weekly</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/thasup.png" />
+            <h3>Thasup Mix blabla popi popi</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/trex.png" />
+            <h3>Hangover</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/rotation.png" />
+            <h3>A rotazione</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/discover.png" />
+            <h3>Discover Weekly</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/thasup.png" />
+            <h3>Thasup Mix blabla popi popi</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/trex.png" />
+            <h3>Hangover</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/trex.png" />
+            <h3>Hangover</h3>
+            <h4>artista</h4>
+          </div>
+          <div class="album-card">
+            <img src="./assets/img/trex.png" />
+            <h3>Hangover</h3>
+            <h4>artista</h4>
+          </div>
         </div>
       </div>
       <!-- RIGHT COLUMN -->
@@ -88,7 +214,11 @@
             <i class="fa-solid fa-forward-step"></i>
             <i class="fa-solid fa-repeat"></i>
           </div>
-          <div class="player-bar">0:00 ---------------------------------------------------------------------- 0:00</div>
+          <div class="player-bar">
+            0:00
+            ----------------------------------------------------------------------
+            0:00
+          </div>
         </div>
         <div class="player-opt">
           <i class="fa-solid fa-bars"></i>
