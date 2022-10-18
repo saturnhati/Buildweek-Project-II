@@ -552,6 +552,7 @@ footer .footer .player-opt .slidecontainer {
 }
 footer .footer .player-opt .slidecontainer .slider {
   -webkit-appearance: none;
+  appearance: none;
   width: 80px;
   height: 4px;
   border-radius: 5px;
