@@ -60,7 +60,17 @@
       <div class="main-container">
         <header>
           <div class="nav-icons"><i class="fa-solid fa-chevron-left"></i><i class="fa-solid fa-chevron-right"></i></div>
-          <div class="account-dropdown">prova</div>
+          <div class="dropdown-container">
+            <div class="dropdown"><img src="./assets/img/avatar.jpg" />username <i onclick="openDropdown()" id="icon-down" class="fa-solid fa-caret-down visible-icon"></i><i onclick="openDropdown()" id="icon-up" class="fa-solid fa-caret-up"></i></div>
+            <div id="dropdown-menu" class="dropdown-menu">
+              <a href="#">Account <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#">Profilo</a>
+              <a href="#">Sessione privata</a>
+              <a href="#">Impostazioni</a>
+              <hr />
+              <a href="#">Esci</a>
+            </div>
+          </div>
         </header>
         <div class="main-content">
           <div class="hero">
@@ -158,10 +168,87 @@
         </div>
       </div>
       <!-- RIGHT COLUMN -->
-      <div class="side-column">
-        <div>pippo</div>
-        <div>paperino</div>
-        <div>pluto</div>
+      <div class="side-column right-column">
+        <!-- Aragorn -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/aragorn.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Aragorn</h3>
+              <p>Voglio Diventare Presto un Re • Roberto Del Giudice</p>
+              <p><i class="fa-solid fa-compact-disc"></i> Il Re Leone (soundtrack)</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
+        <!-- Sauron -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/sauron.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Sauron</h3>
+              <p>People = shit • Slipknot</p>
+              <p><i class="fa-solid fa-compact-disc"></i> Iowa</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
+        <!-- Gandalf -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/gandalf.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Gandalf</h3>
+              <p>Time to Pretend • MGMT</p>
+              <p><i class="fa-solid fa-compact-disc"></i> Oracular Spectacular</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
+        <!-- Frodo -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/frodo.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Frodo</h3>
+              <p>Single Ladies (Put a Ring on it) • Beyoncé</p>
+              <p><i class="fa-solid fa-compact-disc"></i> I AM... SASHA FIERCE</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
+        <!-- Galadriel -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/galadriel.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Galadriel</h3>
+              <p>Brictom • Eluvetie</p>
+              <p><i class="fa-solid fa-compact-disc"></i> Evocation I</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
       </div>
     </main>
     <!-- BOTTOM PLAYER -->

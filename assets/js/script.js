@@ -20,3 +20,14 @@ function displayCover(albumCover, albumArtist, albumTitle) {
     heroTitle.innerHTML = albumTitle
     heroArtist.innerHTML = albumArtist.name
 }
+
+
+// Funzione per il menu dropdown
+function openDropdown() {
+    let dropdown = document.querySelector('#dropdown-menu')
+    let icondown = document.querySelector('.fa-caret-down')
+    let iconup = document.querySelector('.fa-caret-up')
+    dropdown.classList.toggle('visible')
+    icondown.classList.toggle('visible-icon')
+    iconup.classList.toggle('visible-icon')
+}

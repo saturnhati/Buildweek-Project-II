@@ -68,6 +68,53 @@ body {
   overflow-y: scroll;
 }
 
+.right-column {
+  width: 25rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+.right-column .fb-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.right-column .fb-user .user-infos {
+  display: flex;
+  align-items: flex-start;
+}
+.right-column .fb-user .user-infos h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.right-column .fb-user .user-infos .user-data {
+  width: 140px;
+}
+.right-column .fb-user .user-infos p {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.right-column .fb-user .user-infos i {
+  font-size: 0.8rem;
+  margin: 0;
+}
+.right-column .fb-user .user-infos img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.right-column .fb-user .user-time {
+  align-self: flex-start;
+}
+.right-column .fb-user .user-time i {
+  font-size: 1rem;
+  margin: 0;
+}
+
 .main-container {
   background-color: #121212;
   width: 100%;
@@ -99,13 +146,75 @@ body {
   margin-right: 1rem;
   border-radius: 50%;
 }
-.main-container header .account-dropdown {
+.main-container header .dropdown-container {
   color: white;
+  position: relative;
+}
+.main-container header .dropdown-container .dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: #272828;
+  border-radius: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.main-container header .dropdown-container .dropdown img {
+  width: 25px;
+  border-radius: 50%;
+}
+.main-container header .dropdown-container .dropdown .fa-caret-up {
+  display: none;
+}
+.main-container header .dropdown-container .dropdown .visible-icon {
+  display: block;
+}
+.main-container header .dropdown-container .dropdown-menu {
+  display: none;
+  width: 200px;
+  background-color: #272828;
+  position: absolute;
+  top: 3.3rem;
+  left: -5rem;
+  border-radius: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.main-container header .dropdown-container .dropdown-menu hr {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  border-top: 1px solid rgb(81, 81, 81);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+.main-container header .dropdown-container .dropdown-menu a {
+  border-radius: 3px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: block;
+  text-decoration: none;
+  color: lightgray;
+}
+.main-container header .dropdown-container .dropdown-menu a i {
+  float: right;
+  margin-right: 6px;
+}
+.main-container header .dropdown-container .dropdown-menu a:hover {
+  background-color: #424242;
+}
+.main-container header .dropdown-container .visible {
+  display: block;
 }
 .main-container .main-content {
   background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 30%);
-  display: flex;
-  flex-direction: column;
   padding-top: 0;
   padding-bottom: 1rem;
   padding-left: 2rem;
@@ -135,7 +244,6 @@ body {
   color: white;
   margin: 0;
   font-size: 5rem;
-  margin-left: -5px;
 }
 .main-container .main-content .hero .hero-info h1:hover {
   text-decoration: underline;

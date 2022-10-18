@@ -1,5 +1,3 @@
-@import './buttons.scss';
-
 // GENERAL
 
 * {
@@ -77,6 +75,61 @@ body {
     }
 }
 
+.right-column {
+    width: 25rem;
+    padding: {
+        left: .6rem;
+        right: .6rem;
+    }
+    .fb-user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: {
+            top: 1.2rem;
+        }
+        .user-infos {
+            display: flex;
+            align-items: flex-start;
+            h3 {
+                margin: {
+                    top: 0;
+                    bottom: 8px;
+                }
+            }
+            .user-data {
+                width: 140px;
+            }
+            p {
+                font-size: 0.8rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: {
+                    top: 8px;
+                    bottom: 8px;
+                }
+            }
+            i {
+                font-size: 0.8rem;
+                margin: 0;
+            }
+            img {
+                width: 50px;
+                border-radius: 50%;
+                margin-right: 8px;
+            }
+        }
+        .user-time {
+            align-self: flex-start;
+            i {
+                font-size: 1rem;
+                margin: 0;
+            }
+        }
+    }
+}
+
 // CENTRAL MAIN SECTION
 
 .main-container {
@@ -112,14 +165,85 @@ body {
                 border-radius: 50%;
             }
         }
-        .account-dropdown {
+        .dropdown-container {
             color: white;
+            position: relative;
+            .dropdown {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                background-color: #272828;
+                border-radius: 20px;
+                padding: {
+                    top: 8px;
+                    bottom: 8px;
+                    left: 10px;
+                    right: 10px;
+                }
+                img {
+                    width:25px;
+                    border-radius: 50%;
+                }
+                .fa-caret-up {
+                    display: none;
+                }
+                .visible-icon {
+                    display: block;
+                }
+
+            }
+            .dropdown-menu {
+                display: none;
+                width: 200px;
+                background-color: #272828;
+                position: absolute;
+                top: 3.3rem;
+                left: -5rem;
+                border-radius: 6px;
+                padding: {
+                    top: 8px;
+                    bottom: 8px;
+                    left: 10px;
+                    right: 10px;
+                }
+                hr {
+                    margin-top: 1.5rem;
+                    margin-bottom: 0;
+                    border: {
+                        top: 1px solid rgb(81, 81, 81);
+                        bottom: none;
+                        left: none;
+                        right: none;
+                    }
+                }
+                a {
+                    border-radius: 3px;
+                    padding: {
+                        left: .4rem;
+                        right: .4rem;
+                        top: 1rem;
+                        bottom: 1rem;
+                    }
+                    display: block;
+                    text-decoration: none;
+                    color: lightgray;
+                    i {
+                        float: right;
+                        margin-right: 6px;
+                    }
+                }
+                a:hover {
+                    background-color: #424242;
+                }
+            }
+            .visible {
+                display: block;
+            } 
         }
     }
     .main-content {
         background: linear-gradient(180deg, rgba(88,22,66,1) 0%, rgba(18,18,18,1) 30%);
-        display: flex;
-        flex-direction: column;
         padding: {
             top: 0;
             bottom: 1rem;
@@ -152,7 +276,6 @@ body {
                     color: white;
                     margin: 0;
                     font-size: 5rem;
-                    margin-left: -5px; // è orribile lo toglierò è MOSTRUOSO
                 }  
                 h1:hover {
                     text-decoration: underline;
