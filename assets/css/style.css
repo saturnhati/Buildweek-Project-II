@@ -386,16 +386,16 @@ body {
   display: flex;
   align-items: center;
 }
-.side-column .playlist {
+.side-column .playlist-list {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
 }
-.side-column .playlist a {
+.side-column .playlist-list a {
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
-.side-column .playlist a:hover {
+.side-column .playlist-list a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -690,15 +690,21 @@ body {
   width: 180px;
   border-radius: 4px;
 }
-.main-container .recent-album .album-card h3 {
+.main-container .recent-album .album-card a {
+  display: block;
+  text-decoration: none;
+}
+.main-container .recent-album .album-card a:nth-of-type(1) {
   font-size: 1.1rem;
   color: white;
-  margin-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 6px;
+  margin-bottom: 0;
 }
-.main-container .recent-album .album-card h4 {
+.main-container .recent-album .album-card a:nth-of-type(2) {
+  margin-top: 4px;
   margin-bottom: 0;
   font-size: 1rem;
   color: gray;
