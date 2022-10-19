@@ -1,6 +1,9 @@
 async function getAlbum() {
+  let queryString = new URLSearchParams(window.location.search);
+  let id = queryString.get("id");
+
   let httpResponse = await fetch(
-    "https://striveschool-api.herokuapp.com/api/deezer/album/351619137"
+    `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`
   );
   let json = await httpResponse.json();
   let albumCover = json.cover;
