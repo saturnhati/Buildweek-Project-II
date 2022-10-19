@@ -18,6 +18,7 @@ async function displayArtistPage() {
       </li>`
     }
     document.querySelector('.artist-likers p').innerHTML = `di ${objectArtist.name}`
+    document.querySelector('.artist-like img').src = objectArtist.picture_medium
 }
 
 
