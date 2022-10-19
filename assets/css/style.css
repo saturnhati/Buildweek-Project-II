@@ -1,6 +1,9 @@
 .main-container .artist-hero {
   padding: 1rem 2rem;
-  background-color: darkslategrey;
+  background-image: url("https://e-cdns-images.dzcdn.net/images/artist/3ec5542ff520ee74e2befdaba32ef2ef/1000x1000-000000-80-0-0.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .main-container .artist-hero h3 {
   color: white;
@@ -226,16 +229,17 @@
 }
 .main-content-album .track-player #number-title {
   display: flex;
+  width: 190px;
 }
 .main-content-album .track-player #number-title #number {
   font-size: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.main-content-album .track-player #number-title #title {
+.main-content-album .track-player #number-title #song-artist #title {
   font-size: 1rem;
 }
-.main-content-album .track-player #number-title #artist {
+.main-content-album .track-player #number-title #song-artist #artist {
   color: grey;
 }
 .main-content-album .track-player #number-title #song-number {

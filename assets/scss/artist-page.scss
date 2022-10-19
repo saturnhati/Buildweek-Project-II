@@ -1,7 +1,10 @@
 .main-container { 
     .artist-hero {
         padding: 1rem 2rem;
-        background-color: darkslategrey;
+        background-image: url("https://e-cdns-images.dzcdn.net/images/artist/3ec5542ff520ee74e2befdaba32ef2ef/1000x1000-000000-80-0-0.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
         h3 {
             color: white;
             margin-top: 150px;
