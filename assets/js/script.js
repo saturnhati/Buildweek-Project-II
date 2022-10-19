@@ -21,7 +21,7 @@ function displayCover(albumCover, albumArtist, albumTitle) {
 
 // FETCH ALBUMS HOMEPAGE
 
-let arrayAlbums = ['361734707', '300098017', '351619137', '42378011', '228257312', '1346746', '1236002', '130876272']
+let arrayAlbums = ['361734707', '300098017', '351619137', '1262014', '228257312', '1346746', '1236002', '130876272']
 
 async function getAlbums() {
     for (let album of arrayAlbums) {
