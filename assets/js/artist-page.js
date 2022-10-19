@@ -1,6 +1,8 @@
 async function displayArtistPage() {
-    let apiArtist = await fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/415')
-    let apiArtistSongs = await fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/415/top?limit=50')
+    let queryString = new URLSearchParams(window.location.search)
+    let id = queryString.get('id')
+    let apiArtist = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
+    let apiArtistSongs = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`)
     // Creo l'oggetto da apiArtist
     let objectArtist = await apiArtist.json()
     // Creo l'oggetto da apiArtistSong
