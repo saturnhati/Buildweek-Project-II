@@ -404,6 +404,23 @@ body {
   width: 25rem;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
+  padding-top: 0.2rem;
+}
+.right-column .header-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.right-column .header-column h2 {
+  color: rgb(232, 232, 232);
+  font-size: 1.1rem;
+}
+.right-column .header-column i {
+  font-size: 1rem;
+  margin-left: 10px;
+  margin-right: 0;
 }
 .right-column .fb-user {
   display: flex;
