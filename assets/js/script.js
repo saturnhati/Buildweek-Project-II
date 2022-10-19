@@ -55,15 +55,6 @@ async function getAlbums() {
 
 }
 
-
-//             <div class="album-card">
-//               <img src="./assets/img/rotation.png" />
-//               <h3>A rotazione</h3>
-//               <h4>artista</h4>
-//             </div>
-
-
-
 // Funzione per il menu dropdown
 function openDropdown() {
     let dropdown = document.querySelector('#dropdown-menu')
