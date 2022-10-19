@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script src="https://kit.fontawesome.com/51292258d4.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/51292258d4.js"
+      crossorigin="anonymous"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>SPOTIFY HOMEPAGE</title>
+    <title>SPOTIFY ALBUM PAGE</title>
   </head>
   <body>
     <main class="container">
@@ -59,14 +62,86 @@
       <!-- MAIN CONTENT -->
       <div class="main-container">
         <header>
-          <div class="nav-icons"><i class="fa-solid fa-chevron-left"></i><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="nav-icons">
+            <i class="fa-solid fa-chevron-left"></i
+            ><i class="fa-solid fa-chevron-right"></i>
+          </div>
           <div class="account-dropdown">prova</div>
         </header>
-        <div class="main-content">
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
+        <div class="main-content-album">
+          <div class="hero-album">
+            <img id="hero-image-album" />
+            <div class="hero-info-album">
+              <p>ALBUM</p>
+              <a href="#"><h1 id="hero-title-album">PROVA</h1></a>
+              <div class="album-caption">
+                <img id="mini-artist-image" />
+                <h3 id="hero-artist-album">PROVA</h3>
+              </div>
+            </div>
+          </div>
+          <div id="icon-bar">
+            <i class="fa-solid fa-circle-play"></i>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-circle-down"></i>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+          <div id="album-tracks">
+            <div class="track-player">
+              <div id="number-title">
+                <div id="number">#</div>
+                <div id="title">TITOLO</div>
+              </div>
+              <div id="play">RIPRODUZIONE</div>
+              <div id="duration">ICONA</div>
+            </div>
+            <hr />
+            <!-- <div class="track-player">
+              <div id="number-title">
+                <div id="song-number">1</div>
+                <div id="song-artist">
+                  <div id="title">Bulletproof Cupid</div>
+                  <div id="artist">Placebo</div>
+                </div>
+              </div>
+              <div id="play-song">3.863.231</div>
+              <div id="duration-song">2.22</div>
+            </div>
+            <div class="track-player">
+              <div id="number-title">
+                <div id="song-number">2</div>
+                <div id="song-artist">
+                  <div id="title">English Summer Rain</div>
+                  <div id="artist">Placebo</div>
+                </div>
+              </div>
+              <div id="play-song">6.390.325</div>
+              <div id="duration-song">4.01</div>
+            </div> -->
+          </div>
+          <h2>Altro di Placebo</h2>
+          <div id="more-albums">
+            <!-- <div class="more-album-card">
+              <img src="./assets/img/rotation.png" />
+              <h3>A rotazione</h3>
+              <h4>artista</h4>
+            </div>
+            <div class="more-album-card">
+              <img src="./assets/img/rotation.png" />
+              <h3>A rotazione</h3>
+              <h4>artista</h4>
+            </div>
+            <div class="more-album-card">
+              <img src="./assets/img/rotation.png" />
+              <h3>A rotazione</h3>
+              <h4>artista</h4>
+            </div>
+            <div class="more-album-card">
+              <img src="./assets/img/rotation.png" />
+              <h3>A rotazione</h3>
+              <h4>artista</h4>
+            </div> -->
+          </div>
         </div>
       </div>
       <!-- RIGHT COLUMN -->
@@ -88,7 +163,11 @@
             <i class="fa-solid fa-forward-step"></i>
             <i class="fa-solid fa-repeat"></i>
           </div>
-          <div class="player-bar">0:00 ---------------------------------------------------------------------- 0:00</div>
+          <div class="player-bar">
+            0:00
+            ----------------------------------------------------------------------
+            0:00
+          </div>
         </div>
         <div class="player-opt">
           <i class="fa-solid fa-bars"></i>
@@ -99,6 +178,7 @@
         </div>
       </div>
     </footer>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/album-script.js"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
   </body>
 </html>
