@@ -1,6 +1,6 @@
 async function displayArtistPage() {
     let apiArtist = await fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/415')
-    let apiArtistSongs = await fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/415/top?limit=100')
+    let apiArtistSongs = await fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/415/top?limit=50')
     // Creo l'oggetto da apiArtist
     let objectArtist = await apiArtist.json()
     // Creo l'oggetto da apiArtistSong
@@ -17,6 +17,7 @@ async function displayArtistPage() {
         <span id="artist-followers">${arrayArtistSong.rank}</span><span id="artist-time">${arrayArtistSong.duration}</span>
       </li>`
     }
+    document.querySelector('.artist-likers p').innerHTML = `di ${objectArtist.name}`
 }
 
 
