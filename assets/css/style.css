@@ -139,6 +139,172 @@
   font-size: 1rem;
 }
 
+.main-content-album {
+  background: linear-gradient(180deg, rgb(88, 22, 66) 0%, rgb(18, 18, 18) 30%);
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.main-content-album a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: lightgray;
+}
+.main-content-album .hero-album {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.main-content-album .hero-album #hero-image-album {
+  width: 220px;
+  height: 220px;
+}
+.main-content-album .hero-album .hero-info-album h1 {
+  color: white;
+  margin: 0;
+  font-size: 3rem;
+  margin-left: -5px;
+}
+.main-content-album .hero-album .hero-info-album h1:hover {
+  text-decoration: underline;
+}
+.main-content-album .hero-album p {
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: white;
+}
+.main-content-album .hero-album p:nth-of-type(2) {
+  font-size: 1.2rem;
+}
+.main-content-album .hero-album .album-caption {
+  display: flex;
+}
+.main-content-album .hero-album .album-caption #mini-artist-image {
+  border-radius: 30px;
+  width: 25px;
+}
+.main-content-album .hero-album .album-caption h3 {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0;
+  color: white;
+}
+.main-content-album .hero-album .album-caption h3:hover {
+  text-decoration: underline;
+}
+.main-content-album #icon-bar {
+  margin-top: 2rem;
+}
+.main-content-album #icon-bar i {
+  font-size: 2rem;
+  margin-right: 2rem;
+  color: lightgray;
+}
+.main-content-album #icon-bar i:hover {
+  color: white;
+}
+.main-content-album #icon-bar .fa-circle-play {
+  font-size: 3rem;
+  color: #1ed760;
+}
+.main-content-album #icon-bar .fa-circle-play:hover {
+  color: #1ed760;
+  scale: 1.1;
+}
+.main-content-album .track-player {
+  display: flex;
+  justify-content: space-between;
+  color: lightgray;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.main-content-album .track-player #number-title {
+  display: flex;
+}
+.main-content-album .track-player #number-title #number {
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.main-content-album .track-player #number-title #title {
+  font-size: 1rem;
+}
+.main-content-album .track-player #number-title #artist {
+  color: grey;
+}
+.main-content-album .track-player #number-title #song-number {
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+}
+.main-content-album .track-player #play {
+  font-size: 1rem;
+  margin-left: 10rem;
+}
+.main-content-album .track-player #duration {
+  font-size: 1rem;
+  margin-right: 3rem;
+}
+.main-content-album .track-player #play-song {
+  font-size: 1rem;
+  margin-left: 10rem;
+  margin-top: 0.5rem;
+}
+.main-content-album .track-player #duration-song {
+  font-size: 1rem;
+  margin-right: 3rem;
+  margin-top: 0.5rem;
+}
+.main-content-album .track-player:hover {
+  background-color: #282828;
+  border-radius: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.main-content-album #more-albums {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.6rem;
+  overflow: hidden;
+}
+.main-content-album #more-albums .more-album-card {
+  width: 210px;
+  background-color: rgb(25, 25, 25);
+  padding-top: 1rem;
+  padding-bottom: 1.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  transition: 0.4s;
+}
+.main-content-album #more-albums .more-album-card img {
+  width: 180px;
+  border-radius: 4px;
+}
+.main-content-album #more-albums .more-album-card h3 {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-content-album #more-albums .more-album-card h4 {
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: gray;
+}
+.main-content-album #more-albums .more-album-card:hover {
+  background-color: #282828;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Figtree", sans-serif;

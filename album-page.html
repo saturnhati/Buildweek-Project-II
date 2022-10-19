@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script
-      src="https://kit.fontawesome.com/51292258d4.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/51292258d4.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>SPOTIFY ALBUM PAGE</title>
@@ -15,58 +12,68 @@
     <main class="container">
       <!-- LEFT COLUMN -->
       <nav class="side-column">
-        <a href=""><i class="fa-solid fa-house"></i>Home</a>
-        <a href=""><i class="fa-solid fa-magnifying-glass"></i>Cerca</a>
-        <a href=""><i class="fa-solid fa-book-open"></i>La tua libreria</a>
+        <div class="first-nav">
+          <a href=""><i class="fa-solid fa-house"></i>Home</a>
+          <a href=""><i class="fa-solid fa-magnifying-glass"></i>Cerca</a>
+          <a href=""><i class="fa-solid fa-book-open"></i>La tua libreria</a>
+        </div>
+        <div class="second-nav">
+          <a href=""><i class="fa-solid fa-square-plus"></i></i>Crea playlist</a>
+          <a href=""><img src="./assets/img/like.png">Brani che ti piacciono</a>
+        </div>
         <hr />
         <div class="playlist">
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
-          <a href="">prova</a>
+          <a href="">Essential Indie</a>
+          <a href="">Early Alternative</a>
+          <a href="">Indie Triste</a>
+          <a href="">Indiementicabili</a>
+          <a href="">Top Gaming Tracks</a>
+          <a href="">Minecraft - Volume Alpha</a>
+          <a href="">Glitchcore</a>
+          <a href="">Hyperpop</a>
+          <a href="">Techno Bunker</a>
+          <a href="">Chill Tracks</a>
+          <a href="">Retrowave</a>
+          <a href="">EDM Samplings</a>
+          <a href="">Lofi Chillpop</a>
+          <a href="">Viral Dance</a>
+          <a href="">Night Rider</a>
+          <a href="">Trance Mission</a>
+          <a href="">Electronic Circus</a>
+          <a href="">Orgànica</a>
+          <a href="">Cyberpunk Chillwave</a>
+          <a href="">Internet Rewind</a>
+          <a href="">All New Rock</a>
+          <a href="">Rock This</a>
+          <a href="">Pure Pop Punk</a>
+          <a href="">Skatepark Punks</a>
+          <a href="">Emo Forever</a>
+          <a href="">Noisy</a>
+          <a href="">mEMOries</a>
+          <a href="">Electronic X</a>
+          <a href="">Ambient Tokyo</a>
+          <a href="">Tibetan Bowls</a>
+          <a href="">Funk & Soul Classics</a>
+          <a href="">Global Groove</a>
+          <a href="">Soulful Disco</a>
+          <a href="">Nu-Funk</a>
         </div>
       </nav>
       <!-- MAIN CONTENT -->
       <div class="main-container">
         <header>
-          <div class="nav-icons">
-            <i class="fa-solid fa-chevron-left"></i
-            ><i class="fa-solid fa-chevron-right"></i>
+          <div class="nav-icons"><i class="fa-solid fa-chevron-left"></i><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="dropdown-container">
+            <div class="dropdown"><img src="./assets/img/avatar.jpg" />username <i onclick="openDropdown()" id="icon-down" class="fa-solid fa-caret-down"></i><i onclick="openDropdown()" id="icon-up" class="fa-solid fa-caret-up invisible-icon"></i></div>
+            <div id="dropdown-menu" class="dropdown-menu">
+              <a href="#">Account <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#">Profilo</a>
+              <a href="#">Sessione privata</a>
+              <a href="#">Impostazioni</a>
+              <hr />
+              <a href="#">Esci</a>
+            </div>
           </div>
-          <div class="account-dropdown">prova</div>
         </header>
         <div class="main-content-album">
           <div class="hero-album">
@@ -145,16 +152,100 @@
         </div>
       </div>
       <!-- RIGHT COLUMN -->
-      <div class="side-column">
-        <div>pippo</div>
-        <div>paperino</div>
-        <div>pluto</div>
+      <div class="side-column right-column">
+        <!-- Aragorn -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/aragorn.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Aragorn</h3>
+              <p>Voglio Diventare Presto un Re • Roberto Del Giudice</p>
+              <p><i class="fa-solid fa-compact-disc"></i> Il Re Leone (soundtrack)</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
+        <!-- Sauron -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/sauron.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Sauron</h3>
+              <p>People = shit • Slipknot</p>
+              <p><i class="fa-solid fa-compact-disc"></i> Iowa</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
+        <!-- Gandalf -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/gandalf.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Gandalf</h3>
+              <p>Time to Pretend • MGMT</p>
+              <p><i class="fa-solid fa-compact-disc"></i> Oracular Spectacular</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
+        <!-- Frodo -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/frodo.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Frodo</h3>
+              <p>Single Ladies (Put a Ring on it) • Beyoncé</p>
+              <p><i class="fa-solid fa-compact-disc"></i> I AM... SASHA FIERCE</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
+        <!-- Galadriel -->
+        <div class="fb-user">
+          <div class="user-infos">
+            <div class="ms-3">
+              <img class="fbfriends" src="./assets/img/galadriel.png" alt="" />
+            </div>
+            <div class="user-data">
+              <h3>Galadriel</h3>
+              <p>Brictom • Eluvetie</p>
+              <p><i class="fa-solid fa-compact-disc"></i> Evocation I</p>
+            </div>
+          </div>
+          <div class="user-time">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+        </div>
       </div>
     </main>
     <!-- BOTTOM PLAYER -->
     <footer>
       <div class="footer">
-        <div class="player-listening">prova</div>
+        <div class="player-listening">
+          <img src="./assets/img/caratterespeciale.png" />
+          <div class="listening-infos">
+            <p>mar+e</p>
+            <p>thasup</p>
+          </div>
+          <i class="fa-solid fa-heart"></i>
+        </div>
         <div class="player-main">
           <div class="player-icons">
             <i class="fa-solid fa-shuffle"></i>
@@ -163,17 +254,15 @@
             <i class="fa-solid fa-forward-step"></i>
             <i class="fa-solid fa-repeat"></i>
           </div>
-          <div class="player-bar">
-            0:00
-            ----------------------------------------------------------------------
-            0:00
-          </div>
+          <div class="player-bar">0:00 ---------------------------------------------------------------------- 0:00</div>
         </div>
         <div class="player-opt">
           <i class="fa-solid fa-bars"></i>
           <i class="fa-solid fa-link"></i>
           <i class="fa-solid fa-volume-high"></i>
-          -----------------
+          <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange" />
+          </div>
           <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
         </div>
       </div>
