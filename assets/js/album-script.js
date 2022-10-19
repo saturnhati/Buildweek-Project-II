@@ -1,6 +1,9 @@
 async function getAlbum() {
+  let queryString = new URLSearchParams(window.location.search);
+  let id = queryString.get("id");
+
   let httpResponse = await fetch(
-    "https://striveschool-api.herokuapp.com/api/deezer/album/351619137"
+    `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`
   );
   let json = await httpResponse.json();
   let albumCover = json.cover;
@@ -117,6 +120,16 @@ function displayTracks(tracksArray, albumArtist) {
                 tracksArray[i].duration / 60
               )}</div></div>`;
   }
+}
+
+// Funzione per il menu dropdown
+function openDropdown() {
+  let dropdown = document.querySelector("#dropdown-menu");
+  let icondown = document.querySelector(".fa-caret-down");
+  let iconup = document.querySelector(".fa-caret-up");
+  dropdown.classList.toggle("visible");
+  icondown.classList.toggle("invisible-icon");
+  iconup.classList.toggle("invisible-icon");
 }
 
 window.onload = () => {
