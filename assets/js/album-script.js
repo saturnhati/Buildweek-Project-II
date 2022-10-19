@@ -122,6 +122,16 @@ function displayTracks(tracksArray, albumArtist) {
   }
 }
 
+// Funzione per il menu dropdown
+function openDropdown() {
+  let dropdown = document.querySelector("#dropdown-menu");
+  let icondown = document.querySelector(".fa-caret-down");
+  let iconup = document.querySelector(".fa-caret-up");
+  dropdown.classList.toggle("visible");
+  icondown.classList.toggle("invisible-icon");
+  iconup.classList.toggle("invisible-icon");
+}
+
 window.onload = () => {
   getAlbum();
   getMoreAlbums();
