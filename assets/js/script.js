@@ -3,7 +3,7 @@
 async function getAlbum() {
     let httpResponse = await fetch('https://striveschool-api.herokuapp.com/api/deezer/album/351619137')
     let json = await httpResponse.json()
-    let albumCover = json.cover
+    let albumCover = json.cover_big
     let albumArtist = json.artist
     let albumTitle = json.title
     let playUrl = json.tracks.data[0].preview
