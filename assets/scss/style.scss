@@ -1,5 +1,6 @@
 @import "./artist-page.scss";
 @import "./album-page.scss";
+@import "./search-page.scss";
 
 // GENERAL
 
@@ -204,7 +205,19 @@ body {
     }
     .nav-icons {
       color: rgb(255 255 255 / 0.5);
-      i {
+      i:nth-of-type(1) {
+        font-size: 1.5rem;
+        background-color: rgb(0 0 0 / 0.4);
+        padding: {
+          top: 5px;
+          bottom: 3px;
+          left: 8px;
+          right: 8px;
+        }
+        margin-right: 1rem;
+        border-radius: 50%;
+      }
+      i:nth-of-type(2) {
         font-size: 1.5rem;
         background-color: rgb(0 0 0 / 0.4);
         padding: {
