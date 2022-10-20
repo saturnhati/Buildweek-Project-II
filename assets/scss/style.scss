@@ -558,22 +558,6 @@ footer {
         align-items: center;
         gap: 8px;
         margin-top: 12px;
-        .progress-container {
-          background: #fff;
-          border-radius: 5px;
-          cursor: pointer;
-          margin: 0rem 2rem;
-          height: 0.4rem;
-          width: 90%;
-        }
-        .progress {
-          background: #242323;
-          border-radius: 5px;
-          height: 100%;
-          /* change this to show progress */
-          width: 0%;
-          transition: width 0.1s linear;
-        }
         p {
           font-size: 1.6rem;
           color: white;

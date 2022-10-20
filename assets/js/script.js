@@ -108,40 +108,8 @@ function pauseAudio() {
     player.pause();
 }
 
-const progressContainer = document.getElementById('progress-container');
-const progress = document.getElementById('progress');
-const currentTimeEl = document.getElementById('current-time');
-const durationEl = document.getElementById('duration');
 
-function updateProgressBar(e) {
-    if (isPlaying) {
-        const { duration, currentTime } = e.srcElement;
-        //  Update progress bar width
-        const progressPercent = (currentTime / duration) * 100;
-        progress.style.width = `${progressPercent}%`;
-        // Calculate display for duration
-        const durationMinutes = Math.floor(duration / 60);
-        console.log('minutes', durationMinutes);
-        let durationSeconds = Math.floor(duration % 60);
-        if (durationSeconds < 10) {
-            durationSeconds = `0${durationSeconds}`;
-        }
-        console.log('seconds', durationSeconds);
 
-        //Delay switching duration ELement to avoid display NaN
-        if (durationSeconds) {
-            durationEl.textContent = `${durationMinutes}: ${durationSeconds}`;
-        }
-        // Calculate display for current
-        const currentMinutes = Math.floor(currentTime / 60);
-        let currentSeconds = Math.floor(currentTime % 60);
-        if (currentSeconds < 10) {
-            currentSeconds = `0${currentSeconds}`;
-        }
-        currentTimeEl.textContent = `${currentMinutes}: ${currentSeconds}`
-
-    }
-}
 
 // Funzioni richiamate onload
 window.onload = () => {
