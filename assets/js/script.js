@@ -2,27 +2,28 @@
 
 async function getAlbum() {
     let httpResponse = await fetch('https://striveschool-api.herokuapp.com/api/deezer/album/351619137')
-    let json = await httpResponse.json()
-    let albumCover = json.cover_big
-    let albumArtist = json.artist
-    let albumTitle = json.title
-    let playUrl = json.tracks.data[0].preview
+    let albumJson = await httpResponse.json()
+    let cover = albumJson
+    let title = albumJson.title
+    let artist = albumJson.artist.name
+    let playUrl = albumJson.tracks.data[0].preview
+    let previewTitle = albumJson.tracks.data[0].title
     let buttonPlay = document.querySelector('#play-featured')
     buttonPlay.addEventListener('click', () => {
         let player = document.querySelector('audio')
         player.src = playUrl
-        playAudio()
+        playAudio(cover, artist, previewTitle, playUrl)
     })
-    displayCover(albumCover, albumArtist, albumTitle)
+    displayCover(cover, artist, title)
 }
 
-function displayCover(albumCover, albumArtist, albumTitle) {
-    let cover = document.querySelector('#hero-image')
+function displayCover(cover, artist, title) {
+    let albumCover = document.querySelector('#hero-image')
     let heroTitle = document.querySelector('#hero-title')
     let heroArtist = document.querySelector('#hero-artist')
-    cover.srcset = albumCover
-    heroTitle.innerHTML = albumTitle
-    heroArtist.innerHTML = albumArtist.name
+    albumCover.srcset = cover.cover_big
+    heroTitle.innerHTML = title
+    heroArtist.innerHTML = artist
 }
 
 // FETCH ALBUMS HOMEPAGE
@@ -33,9 +34,9 @@ async function getAlbums() {
     for (let album of arrayAlbums) {
         let httpResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${album}`)
         let albumJson = await httpResponse.json()
-        let cover = albumJson.cover_medium
+        let cover = albumJson
         let title = albumJson.title
-        let artist = albumJson.artist
+        let artist = albumJson.artist.name
         let playUrl = albumJson.tracks.data[0].preview
         let previewTitle = albumJson.tracks.data[0].title
         // creo la card totale
@@ -43,7 +44,7 @@ async function getAlbums() {
         albumCard.classList.add('album-card')
         // creo l'immagine
         let albumCover = document.createElement('img')
-        albumCover.srcset = cover
+        albumCover.srcset = cover.cover_medium
         // creo il bottone
         let buttonPlay = document.createElement('button')
         // creo l'icona play
@@ -55,10 +56,7 @@ async function getAlbums() {
         buttonPlay.appendChild(playIcon)
         buttonPlay.classList.add('button-play')
         buttonPlay.addEventListener('click', () => {
-            let player = document.querySelector('audio')
-            player.src = playUrl
-            console.log(playUrl)
-            playAudio(cover, artist, previewTitle)
+            playAudio(cover, artist, previewTitle, playUrl)
         })
         // creo il titolo
         let albumTitle = document.createElement('a')
@@ -67,7 +65,7 @@ async function getAlbums() {
         // creo il nome artista
         let albumArtist = document.createElement('a')
         albumArtist.setAttribute('href', `http://localhost:5500/artist-page.html?id=${artist.id}`)
-        albumArtist.innerHTML = artist.name
+        albumArtist.innerHTML = artist
         // attacco il vari pezzi alla card totale
         albumCard.appendChild(albumCover)
         albumCard.appendChild(buttonPlay)
@@ -100,13 +98,14 @@ let artistListening = document.querySelector('#artist-listening')
 let coverListening = document.querySelector('#cover-listening')
 let iconListening = document.querySelector('#icon-listening')
 
-function playAudio(cover, artist, previewTitle) {
+function playAudio(cover, artist, previewTitle, playUrl) {
     playIcon.classList.add('icon-invisible')
     pauseIcon.classList.remove('icon-invisible')
+    player.src = playUrl
     player.play();
-    coverListening.srcset = cover
+    coverListening.srcset = cover.cover_medium
     titleListening.innerHTML = previewTitle
-    artistListening.innerHTML = artist.name
+    artistListening.innerHTML = artist
     iconListening.classList.remove('icon-listening-none')
 }
 
@@ -115,9 +114,6 @@ function pauseAudio() {
     pauseIcon.classList.add('icon-invisible')
     player.pause();
 }
-
-
-
 
 // Funzioni richiamate onload
 window.onload = () => {
