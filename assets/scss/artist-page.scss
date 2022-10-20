@@ -1,216 +1,219 @@
 @import "./mixin.scss";
 
-.main-container { 
-    .artist-hero {
-        padding: 1rem 2rem;
-        // background-image: url("https://e-cdns-images.dzcdn.net/images/artist/3ec5542ff520ee74e2befdaba32ef2ef/1000x1000-000000-80-0-0.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        h3 {
-            color: white;
-            margin-top: 200px;
-            margin-bottom: 5px;
+.main-container {
+  .artist-hero {
+    padding: 1rem 2rem;
+    // background-image: url("https://e-cdns-images.dzcdn.net/images/artist/3ec5542ff520ee74e2befdaba32ef2ef/1000x1000-000000-80-0-0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    h3 {
+      color: white;
+      margin-top: 200px;
+      margin-bottom: 5px;
+    }
+    h1 {
+      color: white;
+      font-size: 5rem;
+      margin-top: 0px;
+      margin-bottom: 20px;
+      @include xl {
+        font-size: 3.5rem;
+      }
+      @include lg {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      color: white;
+      font-size: 1.2rem;
+      margin-top: 0px;
+      margin-bottom: 12px;
+    }
+  }
+  .artist-page {
+    background: linear-gradient(180deg, rgba(88, 22, 66, 1) 0%, rgba(18, 18, 18, 1) 30%);
+    padding: 1rem 2rem;
+    .artist-pad {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      .buttonplay {
+        text-align: center;
+        background-color: #1ed760;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        border: none;
+        margin-right: 2.5rem;
+        i {
+          font-size: 1.7rem;
+          padding-left: 4px;
         }
-        h1 {
-            color: white;
-            font-size: 5rem;
-            margin-top: 0px;
-            margin-bottom: 20px;
-            @include xl {
-                font-size: 3.5rem;
+      }
+      .buttonplay:hover {
+        transform: scale(1.05);
+      }
+      .buttonfollow {
+        width: 77px;
+        height: 31px;
+        background-color: transparent;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.6pt;
+        border-radius: 4px;
+        margin-right: 2.5rem;
+        border: 1px solid gray;
+      }
+      .buttonfollow:hover {
+        border: 1px solid white;
+      }
+      .dots {
+        margin-left: 1rem;
+        font-size: 1.6rem;
+        color: gray;
+      }
+      .dots:hover {
+        color: white;
+      }
+    }
+    .artist-songs {
+      display: flex;
+      flex-direction: column;
+      @include xxxl {
+        flex-direction: row;
+      }
+      .popular-songs {
+        width: 100%;
+        margin-right: 4rem;
+        @include xxxl {
+          width: 60%;
+        }
+        h2 {
+          font-size: 1.8rem;
+          color: white;
+          font-weight: 600;
+        }
+        ol {
+          color: white;
+          @include lg {
+            padding-left: 0rem;
+          }
+          li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.1rem;
+            border-radius: 4px;
+            padding: 1rem;
+            @include md {
+              flex-direction: column;
+              align-items: start;
             }
             @include lg {
-                font-size: 2.5rem;
+              padding: 0.5rem;
             }
-        }
-        p {
-            color: white;
-            font-size: 1.2rem;
-            margin-top: 0px;
-            margin-bottom: 12px;
-        }
-    }
-    .artist-page {
-        background: linear-gradient(180deg, rgba(88,22,66,1) 0%, rgba(18,18,18,1) 30%);
-        padding: 1rem 2rem;
-        .artist-pad {
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            .buttonplay {
-                text-align: center;
-                background-color: #1ED760;
-                width: 58px;
-                height: 58px;
-                border-radius: 50%;
-                border: none;
-                margin-right: 2.5rem;
-                i {
-                    font-size: 1.7rem;
-                    padding-left: 4px;
-                }
+            span {
+              font-size: 1.1rem;
             }
-            .buttonplay:hover {
-                transform: scale(1.05);
-            }
-            .buttonfollow {
-                width: 77px;
-                height: 31px;
-                background-color: transparent;
-                color: white;
-                font-size: 0.9rem;
-                font-weight: 600;
-                letter-spacing: 0.60pt;
-                border-radius: 4px;
-                margin-right: 2.5rem;
-                border: 1px solid gray;
-            }
-            .buttonfollow:hover {
-                border: 1px solid white;
-            }
-            .dots {
-                margin-left: 1rem;
-                font-size: 1.6rem;
-                color: gray;
-            }
-            .dots:hover {
-                color: white;
-            }
-        }
-        .artist-songs {
-            display: flex;
-            flex-direction: column;
-            @include xxxl {
-                flex-direction: row;
-            }
-            .popular-songs {
+            .artist-imgtitle {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              width: 350px;
+              @include md {
                 width: 100%;
-                margin-right: 4rem;
-                @include xxxl {
-                    width: 60%;
-                }
-                h2 {
-                    font-size: 1.8rem;
-                    color: white;
-                    font-weight: 600;
-                }
-                ol {
-                    color: white;
-                    @include lg {
-                        padding-left: 0rem;
-                    }
-                    li {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-bottom: 1.1rem;
-                        border-radius: 4px;
-                        padding: 1rem;
-                        @include md {
-                            flex-direction: column;
-                            align-items: start;
-                        }
-                        @include lg {
-                            padding: 0.5rem;
-                        }
-                        span {
-                            font-size: 1.1rem;
-                        }
-                        .artist-imgtitle {
-                            display: flex;
-                            align-items: center;
-                            gap: 15px;
-                            width: 350px;
-                            img {
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-                        #artist-followers {
-                            color: gray;
-                            @include md {
-                                margin-left: 3.8rem;
-                            }
-                        }
-                        #artist-followers:hover {
-                            color: white;
-                            cursor: default;
-                        }
-                        #artist-time {
-                            color: gray;
-                            cursor: default;
-                            @include xl {
-                                display: none;
-                            }
-                        }
-                    }
-                    li:hover {
-                        background-color: rgba(255, 255, 255, 0.1);
-                    }
-                }
+              }
+              img {
+                width: 40px;
+                height: 40px;
+              }
             }
-            .favourite-songs {
-                width: 100%;
-                @include xxxl {
-                    width: 30%;
-                }
-                h2 {
-                    font-size: 1.8rem;
-                    color: white;
-                    font-weight: 600;
-                }
-                .artist-like {
-                    display: flex;
-                    img {
-                        width: 80px;
-                        height: 80px;
-                        border-radius: 50%;
-                        margin-right: 15px;
-                    }
-                    .artist-likers {
-                        h3 {
-                            color: white;
-                            font-size: 1.1rem;
-                            font-weight: 600;
-                        }
-                        h3:hover {
-                            text-decoration: underline;
-                        }
-                        p {
-                            color: gray;
-                            font-size: 1rem;
-                        }
-                    }
-                }
+            #artist-followers {
+              color: gray;
+              @include md {
+                margin-left: 3.8rem;
+              }
             }
+            #artist-followers:hover {
+              color: white;
+              cursor: default;
+            }
+            #artist-time {
+              color: gray;
+              cursor: default;
+              @include xl {
+                display: none;
+              }
+            }
+          }
+          li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
         }
+      }
+      .favourite-songs {
+        width: 100%;
+        @include xxxl {
+          width: 30%;
+        }
+        h2 {
+          font-size: 1.8rem;
+          color: white;
+          font-weight: 600;
+        }
+        .artist-like {
+          display: flex;
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+          .artist-likers {
+            h3 {
+              color: white;
+              font-size: 1.1rem;
+              font-weight: 600;
+            }
+            h3:hover {
+              text-decoration: underline;
+            }
+            p {
+              color: gray;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
     }
+  }
 }
 
 .side-column:nth-of-type(2) {
-    @include lg {
-        display: none;
-    }
+  @include lg {
+    display: none;
+  }
 }
 
 .side-column:nth-of-type(1) {
-    @include md {
-        display: none;
+  @include md {
+    display: none;
+  }
+  .second-nav {
+    @include lg {
+      display: none;
     }
-    .second-nav {
-        @include lg {
-            display: none;
-        }        
+  }
+  hr {
+    @include lg {
+      display: none;
     }
-    hr {
-        @include lg {
-            display: none;
-        }
+  }
+  .playlist {
+    @include lg {
+      display: none;
     }
-    .playlist {
-        @include lg {
-            display: none;
-        }
-    }
+  }
 }

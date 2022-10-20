@@ -42,7 +42,7 @@
 }
 .main-container .artist-page .artist-pad .buttonplay {
   text-align: center;
-  background-color: #1ED760;
+  background-color: #1ed760;
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -137,6 +137,11 @@
   align-items: center;
   gap: 15px;
   width: 350px;
+}
+@media (max-width: 768px) {
+  .main-container .artist-page .artist-songs .popular-songs ol li .artist-imgtitle {
+    width: 100%;
+  }
 }
 .main-container .artist-page .artist-songs .popular-songs ol li .artist-imgtitle img {
   width: 40px;
@@ -640,6 +645,7 @@ body {
 .main-container header {
   background-color: rgb(88, 22, 66);
   position: sticky;
+  z-index: 1000;
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -916,12 +922,22 @@ footer .footer {
   background-color: #181818;
   color: rgb(94, 94, 94);
 }
+@media (max-width: 576px) {
+  footer .footer {
+    justify-content: center;
+  }
+}
 footer .footer .player-listening {
   flex-basis: 240px;
   display: flex;
   justify-content: flex-start;
   gap: 1.3rem;
   align-content: center;
+}
+@media (max-width: 576px) {
+  footer .footer .player-listening {
+    display: none;
+  }
 }
 footer .footer .player-listening p:nth-of-type(1) {
   color: white;
@@ -974,6 +990,11 @@ footer .footer .player-main .player-bar p {
 }
 footer .footer .player-opt {
   flex-basis: 240px;
+}
+@media (max-width: 768px) {
+  footer .footer .player-opt {
+    display: none;
+  }
 }
 footer .footer .player-opt i {
   margin-left: 8px;

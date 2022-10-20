@@ -191,6 +191,7 @@ body {
   header {
     background-color: rgba(88, 22, 66, 1);
     position: sticky;
+    z-index: 1000;
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -495,6 +496,9 @@ footer {
     height: 7rem;
     display: flex;
     justify-content: space-between;
+    @include xs {
+      justify-content: center;
+    }
     align-items: center;
     background-color: #181818;
     color: rgb(94, 94, 94);
@@ -504,6 +508,9 @@ footer {
       justify-content: flex-start;
       gap: 1.3rem;
       align-content: center;
+      @include xs {
+        display: none;
+      }
       p:nth-of-type(1) {
         color: white;
         margin-bottom: 4px;
@@ -560,6 +567,9 @@ footer {
     }
     .player-opt {
       flex-basis: 240px;
+      @include md {
+        display: none;
+      }
       i {
         margin: {
           left: 8px;
