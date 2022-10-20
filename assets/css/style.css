@@ -1,6 +1,5 @@
 .main-container .artist-hero {
   padding: 1rem 2rem;
-  background-image: url("https://e-cdns-images.dzcdn.net/images/artist/3ec5542ff520ee74e2befdaba32ef2ef/1000x1000-000000-80-0-0.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -248,15 +247,32 @@
   align-items: flex-end;
   gap: 2rem;
 }
+@media (max-width: 576px) {
+  .main-content-album .hero-album {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .main-content-album .hero-album #hero-image-album {
   width: 220px;
   height: 220px;
+}
+@media (max-width: 576px) {
+  .main-content-album .hero-album #hero-image-album {
+    width: 80%;
+    height: 80%;
+  }
 }
 .main-content-album .hero-album .hero-info-album h1 {
   color: white;
   margin: 0;
   font-size: 3rem;
   margin-left: -5px;
+}
+@media (max-width: 576px) {
+  .main-content-album .hero-album .hero-info-album h1 {
+    font-size: 2rem;
+  }
 }
 .main-content-album .hero-album .hero-info-album h1:hover {
   text-decoration: underline;
@@ -272,17 +288,25 @@
 .main-content-album .hero-album .album-caption {
   display: flex;
 }
+@media (max-width: 576px) {
+  .main-content-album .hero-album .album-caption {
+    margin-top: 1rem;
+  }
+}
 .main-content-album .hero-album .album-caption #mini-artist-image {
   border-radius: 30px;
   width: 25px;
 }
 .main-content-album .hero-album .album-caption h3 {
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   margin-left: 0.5rem;
   margin-bottom: 0;
   color: white;
 }
-.main-content-album .hero-album .album-caption h3:hover {
+.main-content-album .hero-album .album-caption h3 a {
+  font-size: 1rem;
+}
+.main-content-album .hero-album .album-caption h3 a:hover {
   text-decoration: underline;
 }
 .main-content-album #icon-bar {
@@ -293,12 +317,22 @@
   margin-right: 2rem;
   color: lightgray;
 }
+@media (max-width: 576px) {
+  .main-content-album #icon-bar i {
+    float: left;
+  }
+}
 .main-content-album #icon-bar i:hover {
   color: white;
 }
 .main-content-album #icon-bar .fa-circle-play {
   font-size: 3rem;
   color: #1ed760;
+}
+@media (max-width: 576px) {
+  .main-content-album #icon-bar .fa-circle-play {
+    float: right;
+  }
 }
 .main-content-album #icon-bar .fa-circle-play:hover {
   color: #1ed760;
@@ -337,6 +371,11 @@
   font-size: 1rem;
   margin-left: 10rem;
 }
+@media (max-width: 992px) {
+  .main-content-album .track-player #play {
+    display: none;
+  }
+}
 .main-content-album .track-player #duration {
   font-size: 1rem;
   margin-right: 3rem;
@@ -345,6 +384,11 @@
   font-size: 1rem;
   margin-left: 10rem;
   margin-top: 0.5rem;
+}
+@media (max-width: 992px) {
+  .main-content-album .track-player #play-song {
+    display: none;
+  }
 }
 .main-content-album .track-player #duration-song {
   font-size: 1rem;
@@ -394,6 +438,38 @@
 }
 .main-content-album #more-albums .more-album-card:hover {
   background-color: #282828;
+}
+
+.sticky {
+  background-color: rgb(88, 22, 66);
+  z-index: 10;
+}
+
+@media (max-width: 992px) {
+  .side-column:nth-of-type(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-column:nth-of-type(1) {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .side-column:nth-of-type(1) .second-nav {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .side-column:nth-of-type(1) hr {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .side-column:nth-of-type(1) .playlist-list {
+    display: none;
+  }
 }
 
 * {
@@ -879,13 +955,7 @@ footer .footer .player-main .player-icons i {
 footer .footer .player-main .player-icons i:nth-of-type(3) {
   font-size: 2.2rem;
 }
-footer .footer .player-main .player-icons i:nth-of-type(4) {
-  font-size: 2.2rem;
-}
 footer .footer .player-main .player-icons i:nth-of-type(3):hover {
-  transform: scale(1.05);
-}
-footer .footer .player-main .player-icons i:nth-of-type(4):hover {
   transform: scale(1.05);
 }
 footer .footer .player-main .player-icons .icon-invisible {
