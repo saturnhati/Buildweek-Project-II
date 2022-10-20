@@ -130,17 +130,17 @@
                 height: 40px;
               }
             }
-            #artist-followers {
+            .artist-followers {
               color: gray;
               @include md {
                 margin-left: 3.8rem;
               }
             }
-            #artist-followers:hover {
+            .artist-followers:hover {
               color: white;
               cursor: default;
             }
-            #artist-time {
+            .artist-time {
               color: gray;
               cursor: default;
               @include xl {

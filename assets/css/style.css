@@ -147,24 +147,24 @@
   width: 40px;
   height: 40px;
 }
-.main-container .artist-page .artist-songs .popular-songs ol li #artist-followers {
+.main-container .artist-page .artist-songs .popular-songs ol li .artist-followers {
   color: gray;
 }
 @media (max-width: 768px) {
-  .main-container .artist-page .artist-songs .popular-songs ol li #artist-followers {
+  .main-container .artist-page .artist-songs .popular-songs ol li .artist-followers {
     margin-left: 3.8rem;
   }
 }
-.main-container .artist-page .artist-songs .popular-songs ol li #artist-followers:hover {
+.main-container .artist-page .artist-songs .popular-songs ol li .artist-followers:hover {
   color: white;
   cursor: default;
 }
-.main-container .artist-page .artist-songs .popular-songs ol li #artist-time {
+.main-container .artist-page .artist-songs .popular-songs ol li .artist-time {
   color: gray;
   cursor: default;
 }
 @media (max-width: 1200px) {
-  .main-container .artist-page .artist-songs .popular-songs ol li #artist-time {
+  .main-container .artist-page .artist-songs .popular-songs ol li .artist-time {
     display: none;
   }
 }

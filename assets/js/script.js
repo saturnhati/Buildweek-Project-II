@@ -36,6 +36,7 @@ async function getAlbums() {
         let albumJson = await httpResponse.json()
         let cover = albumJson
         let title = albumJson.title
+        let artistId = albumJson.artist.id
         let artist = albumJson.artist.name
         let playUrl = albumJson.tracks.data[0].preview
         let previewTitle = albumJson.tracks.data[0].title
@@ -64,7 +65,7 @@ async function getAlbums() {
         albumTitle.innerHTML = title
         // creo il nome artista
         let albumArtist = document.createElement('a')
-        albumArtist.setAttribute('href', `http://localhost:5500/artist-page.html?id=${artist.id}`)
+        albumArtist.setAttribute('href', `http://localhost:5500/artist-page.html?id=${artistId}`)
         albumArtist.innerHTML = artist
         // attacco il vari pezzi alla card totale
         albumCard.appendChild(albumCover)
