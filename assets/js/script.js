@@ -6,7 +6,13 @@ async function getAlbum() {
     let albumCover = json.cover
     let albumArtist = json.artist
     let albumTitle = json.title
-    console.log(albumCover)
+    let playUrl = json.tracks.data[0].preview
+    let buttonPlay = document.querySelector('#play-featured')
+    buttonPlay.addEventListener('click', () => {
+        let player = document.querySelector('audio')
+        player.src = playUrl
+        playAudio()
+    })
     displayCover(albumCover, albumArtist, albumTitle)
 }
 
@@ -30,12 +36,29 @@ async function getAlbums() {
         let cover = albumJson.cover_medium
         let title = albumJson.title
         let artist = albumJson.artist
+        let playUrl = albumJson.tracks.data[0].preview
         // creo la card totale
         let albumCard = document.createElement('div')
         albumCard.classList.add('album-card')
         // creo l'immagine
         let albumCover = document.createElement('img')
         albumCover.srcset = cover
+        // creo il bottone
+        let buttonPlay = document.createElement('button')
+        // creo l'icona play
+        let playIcon = document.createElement('i')
+        playIcon.classList.add('fa-solid')
+        playIcon.classList.add('fa-play')
+        playIcon.setAttribute('id', 'playIcon')
+        // inserisco l'icona play nel bottone
+        buttonPlay.appendChild(playIcon)
+        buttonPlay.classList.add('button-play')
+        buttonPlay.addEventListener('click', () => {
+            let player = document.querySelector('audio')
+            player.src = playUrl
+            console.log(playUrl)
+            playAudio()
+        })
         // creo il titolo
         let albumTitle = document.createElement('a')
         albumTitle.setAttribute('href', `http://localhost:5500/album-page.html?id=${album}`)
@@ -46,6 +69,7 @@ async function getAlbums() {
         albumArtist.innerHTML = artist.name
         // attacco il vari pezzi alla card totale
         albumCard.appendChild(albumCover)
+        albumCard.appendChild(buttonPlay)
         albumCard.appendChild(albumTitle)
         albumCard.appendChild(albumArtist)
         // attacco la card al container
@@ -65,6 +89,61 @@ function openDropdown() {
     iconup.classList.toggle('invisible-icon')
 }
 
+// Funzione per l'audio tag
+let player = document.querySelector('audio')
+let seekbar = document.querySelector('#seekbar')
+let playIcon = document.querySelector('.fa-circle-play')
+let pauseIcon = document.querySelector('.fa-circle-pause')
+
+
+function playAudio() {
+    playIcon.classList.add('icon-invisible')
+    pauseIcon.classList.remove('icon-invisible')
+    player.play();
+}
+
+function pauseAudio() {
+    playIcon.classList.remove('icon-invisible')
+    pauseIcon.classList.add('icon-invisible')
+    player.pause();
+}
+
+const progressContainer = document.getElementById('progress-container');
+const progress = document.getElementById('progress');
+const currentTimeEl = document.getElementById('current-time');
+const durationEl = document.getElementById('duration');
+
+function updateProgressBar(e) {
+    if (isPlaying) {
+        const { duration, currentTime } = e.srcElement;
+        //  Update progress bar width
+        const progressPercent = (currentTime / duration) * 100;
+        progress.style.width = `${progressPercent}%`;
+        // Calculate display for duration
+        const durationMinutes = Math.floor(duration / 60);
+        console.log('minutes', durationMinutes);
+        let durationSeconds = Math.floor(duration % 60);
+        if (durationSeconds < 10) {
+            durationSeconds = `0${durationSeconds}`;
+        }
+        console.log('seconds', durationSeconds);
+
+        //Delay switching duration ELement to avoid display NaN
+        if (durationSeconds) {
+            durationEl.textContent = `${durationMinutes}: ${durationSeconds}`;
+        }
+        // Calculate display for current
+        const currentMinutes = Math.floor(currentTime / 60);
+        let currentSeconds = Math.floor(currentTime % 60);
+        if (currentSeconds < 10) {
+            currentSeconds = `0${currentSeconds}`;
+        }
+        currentTimeEl.textContent = `${currentMinutes}: ${currentSeconds}`
+
+    }
+}
+
+// Funzioni richiamate onload
 window.onload = () => {
     getAlbum()
     getAlbums()
