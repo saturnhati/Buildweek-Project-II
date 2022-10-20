@@ -1,20 +1,35 @@
 .main-container .artist-hero {
   padding: 1rem 2rem;
-  background-color: darkslategrey;
+  background-image: url("https://e-cdns-images.dzcdn.net/images/artist/3ec5542ff520ee74e2befdaba32ef2ef/1000x1000-000000-80-0-0.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .main-container .artist-hero h3 {
   color: white;
-  margin-top: 150px;
+  margin-top: 200px;
+  margin-bottom: 5px;
 }
 .main-container .artist-hero h1 {
   color: white;
   font-size: 5rem;
-  margin-top: 25px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1200px) {
+  .main-container .artist-hero h1 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 992px) {
+  .main-container .artist-hero h1 {
+    font-size: 2.5rem;
+  }
 }
 .main-container .artist-hero p {
   color: white;
   font-size: 1.2rem;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 12px;
 }
 .main-container .artist-page {
@@ -67,10 +82,21 @@
 }
 .main-container .artist-page .artist-songs {
   display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1601px) {
+  .main-container .artist-page .artist-songs {
+    flex-direction: row;
+  }
 }
 .main-container .artist-page .artist-songs .popular-songs {
-  width: 60%;
+  width: 100%;
   margin-right: 4rem;
+}
+@media (min-width: 1601px) {
+  .main-container .artist-page .artist-songs .popular-songs {
+    width: 60%;
+  }
 }
 .main-container .artist-page .artist-songs .popular-songs h2 {
   font-size: 1.8rem;
@@ -80,6 +106,11 @@
 .main-container .artist-page .artist-songs .popular-songs ol {
   color: white;
 }
+@media (max-width: 992px) {
+  .main-container .artist-page .artist-songs .popular-songs ol {
+    padding-left: 0rem;
+  }
+}
 .main-container .artist-page .artist-songs .popular-songs ol li {
   display: flex;
   justify-content: space-between;
@@ -87,6 +118,17 @@
   margin-bottom: 1.1rem;
   border-radius: 4px;
   padding: 1rem;
+}
+@media (max-width: 768px) {
+  .main-container .artist-page .artist-songs .popular-songs ol li {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (max-width: 992px) {
+  .main-container .artist-page .artist-songs .popular-songs ol li {
+    padding: 0.5rem;
+  }
 }
 .main-container .artist-page .artist-songs .popular-songs ol li span {
   font-size: 1.1rem;
@@ -97,8 +139,17 @@
   gap: 15px;
   width: 350px;
 }
+.main-container .artist-page .artist-songs .popular-songs ol li .artist-imgtitle img {
+  width: 40px;
+  height: 40px;
+}
 .main-container .artist-page .artist-songs .popular-songs ol li #artist-followers {
   color: gray;
+}
+@media (max-width: 768px) {
+  .main-container .artist-page .artist-songs .popular-songs ol li #artist-followers {
+    margin-left: 3.8rem;
+  }
 }
 .main-container .artist-page .artist-songs .popular-songs ol li #artist-followers:hover {
   color: white;
@@ -108,11 +159,21 @@
   color: gray;
   cursor: default;
 }
+@media (max-width: 1200px) {
+  .main-container .artist-page .artist-songs .popular-songs ol li #artist-time {
+    display: none;
+  }
+}
 .main-container .artist-page .artist-songs .popular-songs ol li:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .main-container .artist-page .artist-songs .favourite-songs {
-  width: 30%;
+  width: 100%;
+}
+@media (min-width: 1601px) {
+  .main-container .artist-page .artist-songs .favourite-songs {
+    width: 30%;
+  }
 }
 .main-container .artist-page .artist-songs .favourite-songs h2 {
   font-size: 1.8rem;
@@ -139,6 +200,33 @@
 .main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers p {
   color: gray;
   font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+  .side-column:nth-of-type(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-column:nth-of-type(1) {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .side-column:nth-of-type(1) .second-nav {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .side-column:nth-of-type(1) hr {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .side-column:nth-of-type(1) .playlist {
+    display: none;
+  }
 }
 
 .main-content-album {
