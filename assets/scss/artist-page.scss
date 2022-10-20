@@ -117,9 +117,9 @@
             .button-artist-song {
               border: none;
               background-color: rgb(0 0 0 / 0);
-              display: none;
               i {
                 color: lightgray;
+                visibility: hidden;
               }
             }
             span {
@@ -159,8 +159,8 @@
           li:hover {
             background-color: rgba(255, 255, 255, 0.1);
           }
-          li:hover .button-artist-song {
-            display: block;
+          li:hover .button-artist-song i {
+            visibility: visible;
           }
         }
       }
