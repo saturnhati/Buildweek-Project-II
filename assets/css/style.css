@@ -129,6 +129,14 @@
     padding: 0.5rem;
   }
 }
+.main-container .artist-page .artist-songs .popular-songs ol li .button-artist-song {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  display: none;
+}
+.main-container .artist-page .artist-songs .popular-songs ol li .button-artist-song i {
+  color: lightgray;
+}
 .main-container .artist-page .artist-songs .popular-songs ol li span {
   font-size: 1.1rem;
 }
@@ -170,6 +178,9 @@
 }
 .main-container .artist-page .artist-songs .popular-songs ol li:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+.main-container .artist-page .artist-songs .popular-songs ol li:hover .button-artist-song {
+  display: block;
 }
 .main-container .artist-page .artist-songs .favourite-songs {
   width: 100%;

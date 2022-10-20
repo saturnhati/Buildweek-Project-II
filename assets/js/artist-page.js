@@ -14,18 +14,48 @@ async function displayArtistPage() {
   document.querySelector('.artist-hero p').innerHTML = `${objectArtist.nb_fan} ascoltatori mensili`
   document.querySelector('.artist-hero').style.backgroundImage = `url(${objectArtist.picture_xl})`
   for (const arrayArtistSong of arrayArtistSongs) {
-    document.getElementById('artist-list-songs').innerHTML += `<li>
-        <div class="artist-imgtitle">
-          <button type="button" class="button-artist-song"></button>
-          <img src=${arrayArtistSong.album.cover_small} alt="" />
-          <span class="artist-song">${arrayArtistSong.title}</span>
-        </div>
-        <span class="artist-followers">${arrayArtistSong.rank}</span><span class="artist-time">${arrayArtistSong.duration}</span>
-      </li>`
-    let playButtonArtist = document.querySelector('.button-artist-song')
-    playButtonArtist.addEventListener('click', () => {
+    let container = document.getElementById('artist-list-songs')
+    let listElement = document.createElement('li')
+    // creo il div
+    let div = document.createElement('div')
+    div.classList.add('artist-imgtitle')
+    // creo il bottone play
+    let buttonSongPlay = document.createElement('button')
+    buttonSongPlay.setAttribute('type', 'button')
+    buttonSongPlay.classList.add('button-artist-song')
+    buttonSongPlay.addEventListener('click', () => {
       playAudio(arrayArtistSong.album.cover_medium, arrayArtistSong.artist.name, arrayArtistSong.title, arrayArtistSong.preview)
     })
+    // creo l'icona
+    let icon = document.createElement('i')
+    icon.classList.add('fa-solid')
+    icon.classList.add('fa-play')
+    // inserisco l'icona nel bottone
+    buttonSongPlay.appendChild(icon)
+    // creo l'immagine
+    let img = document.createElement('img')
+    img.srcset = arrayArtistSong.album.cover_small
+    // creo lo span titolo
+    let spanTitle = document.createElement('span')
+    spanTitle.classList.add('artist-song')
+    spanTitle.innerHTML = arrayArtistSong.title
+    // inserisco bottone, img e span nel div
+    div.append(buttonSongPlay, img, spanTitle)
+    // creo lo span followers
+    let spanFoll = document.createElement('span')
+    spanFoll.classList.add('artist-song')
+    spanFoll.innerHTML = arrayArtistSong.rank
+    // creo lo span artist
+    let spanTime = document.createElement('span')
+    spanTime.classList.add('artist-time')
+    spanTime.innerHTML = arrayArtistSong.duration
+    // inserisco gli ultimi due span nel div
+    div.appendChild(spanFoll)
+    div.appendChild(spanTime)
+    // inserisco il div nell'li
+    listElement.appendChild(div)
+    // inserisco tutto nell'HTML
+    container.appendChild(listElement)
   }
   document.querySelector('.artist-likers p').innerHTML = `di ${objectArtist.name}`
   document.querySelector('.artist-like img').src = objectArtist.picture_medium
