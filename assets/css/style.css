@@ -1005,6 +1005,23 @@ footer .footer .player-main .player-bar p {
   font-size: 1.6rem;
   color: white;
 }
+footer .footer .player-main .player-bar progress {
+  border-radius: 7px;
+  width: 100%;
+  height: 4px;
+}
+footer .footer .player-main .player-bar progress::-webkit-progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: gray;
+  border-radius: 7px;
+}
+footer .footer .player-main .player-bar progress::-webkit-progress-value {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  border-radius: 7px;
+}
 footer .footer .player-opt {
   flex-basis: 240px;
 }

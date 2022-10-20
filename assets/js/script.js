@@ -97,6 +97,11 @@ let titleListening = document.querySelector('#title-listening')
 let artistListening = document.querySelector('#artist-listening')
 let coverListening = document.querySelector('#cover-listening')
 let iconListening = document.querySelector('#icon-listening')
+let progressBar = document.querySelector('#audio-progress')
+let progressValue = progressBar.value
+let interval
+let intervalProgress
+let timer = document.querySelector('#current-time')
 
 function playAudio(cover, artist, previewTitle, playUrl) {
     playIcon.classList.add('icon-invisible')
@@ -107,12 +112,37 @@ function playAudio(cover, artist, previewTitle, playUrl) {
     titleListening.innerHTML = previewTitle
     artistListening.innerHTML = artist
     iconListening.classList.remove('icon-listening-none')
+    progressValue = 0
+    startProgress()
+    startTimer()
+}
+
+function startTimer() {
+    let s = 1
+    interval = setInterval(function () {
+        if (s < 10) {
+            timer.innerHTML = `0:0${s}`
+        }
+        else {
+            timer.innerHTML = `0:${s}`
+        }
+        s++;
+    }, 1000);
 }
 
 function pauseAudio() {
     playIcon.classList.remove('icon-invisible')
     pauseIcon.classList.add('icon-invisible')
     player.pause();
+    clearInterval(intervalProgress)
+    clearInterval(interval);
+}
+
+function startProgress() {
+    intervalProgress = setInterval(() => {
+        progressValue++
+        progressBar.setAttribute("value", progressValue)
+    }, 1000);
 }
 
 // Funzioni richiamate onload
