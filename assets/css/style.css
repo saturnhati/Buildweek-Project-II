@@ -953,6 +953,9 @@ footer .footer .player-listening i {
   margin-left: 10px;
   color: #1ed760;
 }
+footer .footer .player-listening .icon-listening-none {
+  display: none;
+}
 footer .footer .player-listening img {
   width: 65px;
 }
@@ -968,10 +971,10 @@ footer .footer .player-main .player-icons i {
   margin-left: 11px;
   margin-right: 11px;
 }
-footer .footer .player-main .player-icons i:nth-of-type(3) {
+footer .footer .player-main .player-icons .big {
   font-size: 2.2rem;
 }
-footer .footer .player-main .player-icons i:nth-of-type(3):hover {
+footer .footer .player-main .player-icons .big:hover {
   transform: scale(1.05);
 }
 footer .footer .player-main .player-icons .icon-invisible {

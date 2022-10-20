@@ -37,6 +37,7 @@ async function getAlbums() {
         let title = albumJson.title
         let artist = albumJson.artist
         let playUrl = albumJson.tracks.data[0].preview
+        let previewTitle = albumJson.tracks.data[0].title
         // creo la card totale
         let albumCard = document.createElement('div')
         albumCard.classList.add('album-card')
@@ -57,7 +58,7 @@ async function getAlbums() {
             let player = document.querySelector('audio')
             player.src = playUrl
             console.log(playUrl)
-            playAudio()
+            playAudio(cover, artist, previewTitle)
         })
         // creo il titolo
         let albumTitle = document.createElement('a')
@@ -94,12 +95,19 @@ let player = document.querySelector('audio')
 let seekbar = document.querySelector('#seekbar')
 let playIcon = document.querySelector('.fa-circle-play')
 let pauseIcon = document.querySelector('.fa-circle-pause')
+let titleListening = document.querySelector('#title-listening')
+let artistListening = document.querySelector('#artist-listening')
+let coverListening = document.querySelector('#cover-listening')
+let iconListening = document.querySelector('#icon-listening')
 
-
-function playAudio() {
+function playAudio(cover, artist, previewTitle) {
     playIcon.classList.add('icon-invisible')
     pauseIcon.classList.remove('icon-invisible')
     player.play();
+    coverListening.srcset = cover
+    titleListening.innerHTML = previewTitle
+    artistListening.innerHTML = artist.name
+    iconListening.classList.remove('icon-listening-none')
 }
 
 function pauseAudio() {

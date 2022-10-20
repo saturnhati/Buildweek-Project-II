@@ -525,6 +525,9 @@ footer {
         margin-left: 10px;
         color: #1ed760;
       }
+      .icon-listening-none {
+        display: none;
+      }
       img {
         width: 65px;
       }
@@ -543,10 +546,10 @@ footer {
             right: 11px;
           }
         }
-        i:nth-of-type(3) {
+        .big {
           font-size: 2.2rem;
         }
-        i:nth-of-type(3):hover {
+        .big:hover {
           transform: scale(1.05);
         }
         .icon-invisible {
