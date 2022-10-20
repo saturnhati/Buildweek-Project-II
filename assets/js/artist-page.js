@@ -50,10 +50,10 @@ async function displayArtistPage() {
     spanTime.classList.add('artist-time')
     spanTime.innerHTML = arrayArtistSong.duration
     // inserisco gli ultimi due span nel div
-    div.appendChild(spanFoll)
-    div.appendChild(spanTime)
+    // div.appendChild(spanFoll)
+    // div.appendChild(spanTime)
     // inserisco il div nell'li
-    listElement.appendChild(div)
+    listElement.append(div, spanFoll, spanTime)
     // inserisco tutto nell'HTML
     container.appendChild(listElement)
   }
