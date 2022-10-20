@@ -762,6 +762,11 @@ body {
   gap: 2rem;
   background: linear-gradient(215deg, rgba(88, 22, 66, 0) 0%, rgb(18, 18, 18) 100%);
 }
+@media (max-width: 576px) {
+  .main-container .main-content .hero {
+    flex-direction: column;
+  }
+}
 .main-container .main-content .hero #hero-image {
   width: 220px;
   height: 220px;
@@ -770,6 +775,26 @@ body {
   color: white;
   margin: 0;
   font-size: 5rem;
+}
+@media (max-width: 1422px) {
+  .main-container .main-content .hero .hero-info h1 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 1200px) {
+  .main-container .main-content .hero .hero-info h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 1200px) {
+  .main-container .main-content .hero .hero-info h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .main-container .main-content .hero .hero-info h1 {
+    font-size: 2rem;
+  }
 }
 .main-container .main-content .hero .hero-info h1:hover {
   text-decoration: underline;
@@ -800,6 +825,12 @@ body {
   border-radius: 25px;
   border: none;
   letter-spacing: 0.5pt;
+}
+@media (max-width: 992px) {
+  .main-container .main-content .hero .hero-info button {
+    width: 87px;
+    height: 44px;
+  }
 }
 .main-container .main-content .hero .hero-info button:hover {
   transform: scale(1.05);
@@ -842,6 +873,16 @@ body {
   display: flex;
   gap: 1.1rem;
 }
+@media (max-width: 1200px) {
+  .main-container .playlist-card {
+    flex-basis: 47%;
+  }
+}
+@media (max-width: 576px) {
+  .main-container .playlist-card {
+    flex-basis: 100%;
+  }
+}
 .main-container .playlist-card h3 {
   font-size: 1.1rem;
 }
@@ -851,8 +892,15 @@ body {
 .main-container .recent-album {
   display: flex;
   flex-wrap: wrap;
-  gap: 3.6rem;
+  column-gap: 4rem;
+  row-gap: 3rem;
   overflow: hidden;
+}
+@media (max-width: 1200px) {
+  .main-container .recent-album {
+    column-gap: 4rem;
+    justify-content: space-around;
+  }
 }
 .main-container .recent-album .album-card {
   width: 210px;
@@ -868,7 +916,7 @@ body {
   transition: 0.4s;
 }
 .main-container .recent-album .album-card img {
-  width: 180px;
+  width: 100%;
   border-radius: 4px;
 }
 .main-container .recent-album .album-card .button-play {
