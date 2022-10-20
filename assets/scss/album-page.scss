@@ -1,3 +1,5 @@
+@import "./album-media-query";
+
 .main-content-album {
   background: linear-gradient(
     180deg,
@@ -21,16 +23,34 @@
     display: flex;
     align-items: flex-end;
     gap: 2rem;
+    @include xs {
+      flex-direction: column;
+      align-items: center;
+    }
 
     #hero-image-album {
       width: 220px;
       height: 220px;
+      @include xs {
+        width: 80%;
+        height: 80%;
+      }
+      // @include md-lg {
+      //   width: 180px;
+      //   height: 180px;
+      //   margin: {
+      //     bottom: 50px;
+      //   }
+      // }
     }
     .hero-info-album {
       h1 {
         color: white;
         margin: 0;
         font-size: 3rem;
+        @include xs {
+          font-size: 2rem;
+        }
         margin-left: -5px; // è orribile lo toglierò è MOSTRUOSO
       }
       h1:hover {
@@ -47,22 +67,30 @@
     }
     .album-caption {
       display: flex;
+      @include xs {
+        margin: {
+          top: 1rem;
+        }
+      }
       #mini-artist-image {
         border-radius: 30px;
         width: 25px;
       }
       h3 {
         margin: {
-          top: 0.5rem;
+          top: 0.3rem;
           left: 0.5rem;
           bottom: 0;
         }
         padding: {
         }
         color: white;
-      }
-      h3:hover {
-        text-decoration: underline;
+        a {
+          font-size: 1rem;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -74,6 +102,9 @@
       font-size: 2rem;
       margin-right: 2rem;
       color: lightgray;
+      @include xs {
+        float: left;
+      }
     }
     i:hover {
       color: white;
@@ -81,12 +112,18 @@
     .fa-circle-play {
       font-size: 3rem;
       color: #1ed760;
+      @include xs {
+        float: right;
+        margin {
+        }
+      }
     }
     .fa-circle-play:hover {
       color: #1ed760;
       scale: 1.1;
     }
   }
+
   .track-player {
     display: flex;
     justify-content: space-between;
@@ -132,6 +169,9 @@
       margin: {
         left: 10rem;
       }
+      @include lg {
+        display: none;
+      }
     }
     #duration {
       font-size: 1rem;
@@ -144,6 +184,9 @@
       margin: {
         left: 10rem;
         top: 0.5rem;
+      }
+      @include lg {
+        display: none;
       }
     }
     #duration-song {
@@ -171,6 +214,9 @@
     overflow: hidden;
     .more-album-card {
       width: 210px;
+      // @include lg {
+      //   width: 120px;
+      // }
       background-color: rgb(25, 25, 25);
       padding: {
         top: 1rem;
@@ -186,6 +232,9 @@
       transition: 0.4s;
       img {
         width: 180px;
+        // @include lg {
+        //   width: 90px;
+        // }
         border-radius: 4px;
       }
       h3 {
@@ -204,6 +253,39 @@
     }
     .more-album-card:hover {
       background-color: #282828;
+    }
+  }
+}
+
+//classe per elemento sticky
+.sticky {
+  background-color: rgba(88, 22, 66, 1);
+  z-index: 10;
+}
+
+//media query per colonne
+.side-column:nth-of-type(2) {
+  @include lg {
+    display: none;
+  }
+}
+.side-column:nth-of-type(1) {
+  @include md {
+    display: none;
+  }
+  .second-nav {
+    @include lg {
+      display: none;
+    }
+  }
+  hr {
+    @include lg {
+      display: none;
+    }
+  }
+  .playlist-list {
+    @include lg {
+      display: none;
     }
   }
 }
