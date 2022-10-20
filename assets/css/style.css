@@ -104,19 +104,15 @@
 }
 .main-container .artist-page .artist-songs .popular-songs ol {
   color: white;
-}
-@media (max-width: 992px) {
-  .main-container .artist-page .artist-songs .popular-songs ol {
-    padding-left: 0rem;
-  }
+  padding-left: 0rem;
 }
 .main-container .artist-page .artist-songs .popular-songs ol li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1rem;
   border-radius: 4px;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0rem;
 }
 @media (max-width: 768px) {
   .main-container .artist-page .artist-songs .popular-songs ol li {
@@ -126,7 +122,7 @@
 }
 @media (max-width: 992px) {
   .main-container .artist-page .artist-songs .popular-songs ol li {
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0rem;
   }
 }
 .main-container .artist-page .artist-songs .popular-songs ol li .button-artist-song {
@@ -160,7 +156,7 @@
 }
 @media (max-width: 768px) {
   .main-container .artist-page .artist-songs .popular-songs ol li .artist-followers {
-    margin-left: 3.8rem;
+    margin-left: 6.3rem;
   }
 }
 .main-container .artist-page .artist-songs .popular-songs ol li .artist-followers:hover {
