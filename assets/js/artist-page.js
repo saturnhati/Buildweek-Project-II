@@ -43,17 +43,17 @@ async function displayArtistPage() {
     div.append(buttonSongPlay, img, spanTitle)
     // creo lo span followers
     let spanFoll = document.createElement('span')
-    spanFoll.classList.add('artist-song')
+    spanFoll.classList.add('artist-followers')
     spanFoll.innerHTML = arrayArtistSong.rank
     // creo lo span artist
     let spanTime = document.createElement('span')
     spanTime.classList.add('artist-time')
     spanTime.innerHTML = arrayArtistSong.duration
     // inserisco gli ultimi due span nel div
-    div.appendChild(spanFoll)
-    div.appendChild(spanTime)
+    // div.appendChild(spanFoll)
+    // div.appendChild(spanTime)
     // inserisco il div nell'li
-    listElement.appendChild(div)
+    listElement.append(div, spanFoll, spanTime)
     // inserisco tutto nell'HTML
     container.appendChild(listElement)
   }

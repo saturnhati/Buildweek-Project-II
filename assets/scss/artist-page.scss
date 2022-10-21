@@ -97,22 +97,20 @@
         }
         ol {
           color: white;
-          @include lg {
-            padding-left: 0rem;
-          }
+          padding-left: 0rem;         
           li {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.1rem;
+            margin-bottom: 1rem;
             border-radius: 4px;
-            padding: 1rem;
+            padding: 1rem 1rem 1rem 0rem;
             @include md {
               flex-direction: column;
               align-items: start;
             }
             @include lg {
-              padding: 0.5rem;
+              padding: 0.5rem 0.5rem 0.5rem 0rem;
             }
             .button-artist-song {
               border: none;
@@ -141,7 +139,7 @@
             .artist-followers {
               color: gray;
               @include md {
-                margin-left: 3.8rem;
+                margin-left: 6.3rem;
               }
             }
             .artist-followers:hover {
