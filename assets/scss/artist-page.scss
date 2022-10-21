@@ -97,7 +97,7 @@
         }
         ol {
           color: white;
-          padding-left: 0rem;         
+          padding-left: 0rem;
           li {
             display: flex;
             justify-content: space-between;
@@ -223,6 +223,53 @@
   .playlist {
     @include lg {
       display: none;
+    }
+  }
+}
+
+.player-opt {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.volume {
+  input[type="range"] {
+    display: none;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon-size {
+    font-size: 2rem;
+  }
+
+  .bar-hoverbox {
+    padding: 10px 15px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  .bar {
+    background: #999;
+    height: 7px;
+    width: 100px;
+    border-radius: 15px;
+    overflow: hidden;
+    pointer-events: none;
+
+    .bar-fill {
+      background: #fff;
+      width: 0%;
+      height: 100%;
+      background-clip: border-box;
+      pointer-events: none;
     }
   }
 }
