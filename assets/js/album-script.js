@@ -2,9 +2,7 @@ let queryString = new URLSearchParams(window.location.search);
 let id = queryString.get("id");
 
 async function getAlbum() {
-  let httpResponse = await fetch(
-    `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`
-  );
+  let httpResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`);
   let json = await httpResponse.json();
   let albumCover = json.cover_medium;
   let albumArtist = json.artist;
@@ -12,12 +10,8 @@ async function getAlbum() {
   let albumRelease = json.release_date;
   let albumTracks = json.nb_tracks;
   let tracksArray = json.tracks.data;
-  console.log(albumCover);
-  console.log(tracksArray);
-  console.log(tracksArray.title);
-  console.log(tracksArray.indexOf(tracksArray[0]));
   displayCover(albumCover, albumArtist, albumTitle, albumRelease, albumTracks);
-  displayTracks(tracksArray, albumArtist, albumCover);
+  displayTracks(tracksArray);
 }
 
 function displayCover(
@@ -34,12 +28,11 @@ function displayCover(
   cover.srcset = albumCover;
   heroTitle.innerHTML = albumTitle;
 
-  heroArtist.innerHTML = `<a href="http://localhost:5500/artist-page.html?id=${
-    albumArtist.id
-  }">${albumArtist.name}</a> - ${albumRelease.slice(
-    -10,
-    4
-  )} - ${albumTracks} brani`;
+  heroArtist.innerHTML = `<a href="http://localhost:5500/artist-page.html?id=${albumArtist.id
+    }">${albumArtist.name}</a> - ${albumRelease.slice(
+      -10,
+      4
+    )} - ${albumTracks} brani`;
   miniArtistImage.srcset = albumArtist.picture_small;
 }
 
@@ -50,14 +43,11 @@ async function getArtistAlbums() {
     `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`
   );
   let jsonPageAlbum = await pageAlbum.json();
-  console.log(jsonPageAlbum.artist.id);
   // Fetch sulla tracklist
   let moreAlbumArtist = await fetch(
     `https://striveschool-api.herokuapp.com/api/deezer/artist/${jsonPageAlbum.artist.id}/top?limit=4`
   );
   let jsonMoreArtist = await moreAlbumArtist.json();
-  console.log(jsonMoreArtist);
-  console.log(jsonMoreArtist.data[0].album);
   //Prendo i dati da inserire nell'html
   document.querySelector(
     ".main-content-album"
@@ -72,68 +62,63 @@ async function getArtistAlbums() {
 }
 
 //Funzione per visualizzare le tracce
-function displayTracks(tracksArray, albumArtist, albumCover) {
+function displayTracks(tracksArray) {
   //Prendo il container
   let container = document.querySelector("#album-tracks");
   //for (i = 0; i < tracksArray.length; i++)
   for (let track of tracksArray) {
-    //Creo il div con classe track-player
-    let trackPlayerDiv = document.createElement("div");
-    trackPlayerDiv.classList.add("track-player");
-    //Creo il div che contiene numero e bottone, titolo, nome artista
-    let numberTitleDiv = document.createElement("div");
-    numberTitleDiv.classList.add("number-title");
-    trackPlayerDiv.appendChild(numberTitleDiv);
-    //Creo il div con numero e bottone
-    let songNumberDiv = document.createElement("div");
-    songNumberDiv.classList.add("song-number");
-    //Ci metto il numero
-    songNumberDiv.innerHTML += tracksArray.indexOf(track) + 1;
-    //Creo il bottone
-    let buttonSongPlay = document.createElement("button");
-    buttonSongPlay.setAttribute("type", "button");
-    buttonSongPlay.classList.add("button-artist-song");
-    //QUI ANDRA' L'EVENT LISTENER
-    buttonSongPlay.addEventListener("click", () => {
-      playAudio(albumCover, albumArtist.name, track.title, track.preview);
-    });
-    //Creo l'icona
-    let icon = document.createElement("i");
-    icon.classList.add("fa-solid");
-    icon.classList.add("fa-play");
-    //Inserisco l'icona nel bottone
-    buttonSongPlay.appendChild(icon);
-    //Inserisco il bottone nel div
-    songNumberDiv.appendChild(buttonSongPlay);
-    //Inserisco numero e bottone nel numberTitleDiv
-    numberTitleDiv.appendChild(songNumberDiv);
-    //Creo il div per titolo e artista
-    let songArtistDiv = document.createElement("div");
-    songArtistDiv.classList.add("song-artist");
-    numberTitleDiv.appendChild(songArtistDiv);
-    //Creo il div per il titolo e ci metto il titolo di ogni canzone
-    let titleDiv = document.createElement("div");
-    titleDiv.classList.add("title");
-    titleDiv.innerHTML += track.title;
-    songArtistDiv.appendChild(titleDiv);
-    //Creo il div per l'artista e ci metto il nome
-    let artistNameDiv = document.createElement("div");
-    artistNameDiv.classList.add("artist");
-    artistNameDiv.innerHTML = albumArtist.name;
-    songArtistDiv.appendChild(artistNameDiv);
-    //Creo il div per il numero di ripetizioni
-    let playSongDiv = document.createElement("div");
-    playSongDiv.classList.add("play-song");
-    playSongDiv.innerHTML += track.rank;
-    trackPlayerDiv.appendChild(playSongDiv);
-    //Creo il div per la durata
-    let durationSongDiv = document.createElement("div");
-    durationSongDiv.classList.add("duration-song");
-    durationSongDiv.innerHTML += Math.round(track.duration / 60);
-    trackPlayerDiv.appendChild(durationSongDiv);
-
-    //Inserisco tutto nel container
-    container.appendChild(trackPlayerDiv);
+    // creo il div complessivo
+    let trackPlayerDiv = document.createElement('div')
+    trackPlayerDiv.classList.add('track-player')
+    // creo il div che contiene il bottome, il numero e i dati della canzone
+    let numberTitleDiv = document.createElement('div')
+    numberTitleDiv.classList.add('number-title')
+    // creo il bottone
+    let buttonSongPlay = document.createElement('button')
+    buttonSongPlay.setAttribute('type', 'button')
+    buttonSongPlay.classList.add('button-artist-song')
+    // creo l'icona
+    let icon = document.createElement('i')
+    icon.classList.add('fa-solid')
+    icon.classList.add('fa-play')
+    // inserisco l'icona nel bottone
+    buttonSongPlay.appendChild(icon)
+    // aggiungo l'event listener al bottone
+    buttonSongPlay.addEventListener('click', () => {
+      playAudio(track.album.cover_medium, track.artist.name, track.title, track.preview)
+    })
+    // creo il div del numerino
+    let songNumberDiv = document.createElement('div')
+    songNumberDiv.classList.add('song-number')
+    songNumberDiv.innerHTML = tracksArray.indexOf(track) + 1
+    // creo il div delle info canzone
+    let songArtistDiv = document.createElement('div')
+    songArtistDiv.classList.add('song-artist')
+    // creo il div titolo canzone
+    let titleDiv = document.createElement('div')
+    titleDiv.classList.add('title')
+    titleDiv.innerHTML = track.title
+    // creo il div dell'artista
+    let artistDiv = document.createElement('div')
+    artistDiv.classList.add('artist')
+    artistDiv.innerHTML = track.artist.name
+    // inserisco i div titolo e artista nel div info
+    songArtistDiv.appendChild(titleDiv)
+    songArtistDiv.appendChild(artistDiv)
+    // inserisco bottone, div numerino e div info canzoni nel div number-title
+    numberTitleDiv.append(buttonSongPlay, songNumberDiv, songArtistDiv)
+    // creo il div degli ascolti
+    let playSongDiv = document.createElement('div')
+    playSongDiv.classList.add('play-song')
+    playSongDiv.innerHTML = track.rank
+    // creo il div della durata
+    let durationSongDiv = document.createElement('div')
+    durationSongDiv.classList.add('duration-song')
+    durationSongDiv.innerHTML = Math.round(track.duration / 60)
+    // inserisco il div number-title, il div ascolti e il div durata dentro al div principale (track-player)
+    trackPlayerDiv.append(numberTitleDiv, playSongDiv, durationSongDiv)
+    // inserisco il div principale dentro al container
+    container.appendChild(trackPlayerDiv)
   }
 }
 
@@ -141,6 +126,7 @@ window.onload = () => {
   getAlbum();
   getArtistAlbums();
 };
+
 // Funzione per il menu dropdown
 function openDropdown() {
   let dropdown = document.querySelector("#dropdown-menu");
