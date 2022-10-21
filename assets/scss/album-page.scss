@@ -106,9 +106,6 @@
       font-size: 2rem;
       margin-right: 2rem;
       color: lightgray;
-      @include xs {
-        float: left;
-      }
     }
     i:hover {
       color: white;
@@ -116,11 +113,6 @@
     .fa-circle-play {
       font-size: 3rem;
       color: #1ed760;
-      @include xs {
-        float: right;
-        margin {
-        }
-      }
     }
     .fa-circle-play:hover {
       color: #1ed760;
@@ -128,6 +120,9 @@
     }
   }
 
+  hr {
+    width: 100%;
+  }
   .track-player {
     display: flex;
     justify-content: space-between;
@@ -233,6 +228,7 @@
   #more-albums {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     gap: 3.6rem;
     overflow: hidden;
     .more-album-card {

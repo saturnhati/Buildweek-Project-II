@@ -60,8 +60,9 @@ async function getArtistAlbums() {
   for (i = 0; i < jsonMoreArtist.data.length; i++) {
     document.getElementById(
       "more-albums"
-    ).innerHTML += `<div class="more-album-card"><img src=${jsonMoreArtist.data[i].album.cover_medium} /><h3>${jsonMoreArtist.data[i].album.title}</h3></div>`;
+    ).innerHTML += `<div class="more-album-card"><img src=${jsonMoreArtist.data[i].album.cover_medium} /><a href="http://localhost:5500/album-page.html?id=${jsonMoreArtist.data[0].album.id}"><h3>${jsonMoreArtist.data[i].album.title}</h3></a></div>`;
   }
+  console.log(jsonMoreArtist.data[0].album);
 }
 
 //Funzione per visualizzare le tracce
@@ -80,6 +81,15 @@ function displayTracks(tracksArray) {
     let buttonPlay = document.createElement("button");
     buttonPlay.setAttribute("type", "button");
     buttonPlay.classList.add("button-album-song");
+    buttonPlay.setAttribute(
+      "onclick",
+      `playAudio(
+      "${track.album.cover_medium}",
+      "${track.artist.name}",
+      "${track.title}",
+      "${track.preview}"
+    );`
+    );
     // creo l'icona
     let icon = document.createElement("i");
     icon.classList.add("fa-solid");
@@ -87,14 +97,14 @@ function displayTracks(tracksArray) {
     // inserisco l'icona nel bottone
     buttonPlay.appendChild(icon);
     // aggiungo l'event listener al bottone
-    buttonPlay.addEventListener("click", () => {
-      playAudio(
-        track.album.cover_medium,
-        track.artist.name,
-        track.title,
-        track.preview
-      );
-    });
+    // buttonPlay.addEventListener("click", () => {
+    //   playAudio(
+    //     track.album.cover_medium,
+    //     track.artist.name,
+    //     track.title,
+    //     track.preview
+    //   );
+    // });
     // creo il div del numerino
     let songNumberDiv = document.createElement("div");
     songNumberDiv.classList.add("song-number");
@@ -128,6 +138,26 @@ function displayTracks(tracksArray) {
     // inserisco il div principale dentro al container
     container.appendChild(trackPlayerDiv);
   }
+  let buttonBarPlay = document.createElement("button");
+  buttonBarPlay.setAttribute("type", "button");
+  buttonBarPlay.classList.add("icon-bar-button");
+  buttonBarPlay.setAttribute(
+    "onclick",
+    `playAudio(
+      "${tracksArray[0].album.cover_medium}",
+      "${tracksArray[0].artist.name}",
+      "${tracksArray[0].title}",
+      "${tracksArray[0].preview}"
+    );`
+  );
+  // creo l'icona
+  let iconBar = document.createElement("i");
+  iconBar.classList.add("fa-solid");
+  iconBar.classList.add("fa-circle-play");
+  // inserisco l'icona nel bottone
+  buttonBarPlay.appendChild(iconBar);
+  // inserisco il bottone nell'icon bar
+  document.querySelector("#icon-bar").prepend(buttonBarPlay);
 }
 
 window.onload = () => {
