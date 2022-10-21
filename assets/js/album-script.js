@@ -30,11 +30,12 @@ function displayCover(
   cover.srcset = albumCover;
   heroTitle.innerHTML = albumTitle;
 
-  heroArtist.innerHTML = `<a href="http://localhost:5500/artist-page.html?id=${albumArtist.id
-    }">${albumArtist.name}</a> - ${albumRelease.slice(
-      -10,
-      4
-    )} - ${albumTracks} brani`;
+  heroArtist.innerHTML = `<a href="http://localhost:5500/artist-page.html?id=${
+    albumArtist.id
+  }">${albumArtist.name}</a> - ${albumRelease.slice(
+    -10,
+    4
+  )} - ${albumTracks} brani`;
   miniArtistImage.srcset = albumArtist.picture_small;
 }
 
@@ -59,7 +60,7 @@ async function getArtistAlbums() {
   for (i = 0; i < jsonMoreArtist.data.length; i++) {
     document.getElementById(
       "more-albums"
-    ).innerHTML += `<div class="more-album-card"><img src=${jsonMoreArtist.data[i].album.cover_medium} /><a href="http://localhost:5500/album-page.html?id=${jsonMoreArtist.data[0].album.id}"><h3>${jsonMoreArtist.data[i].album.title}</h3></a></div>`;
+    ).innerHTML += `<div class="more-album-card"><img src=${jsonMoreArtist.data[i].album.cover_medium} /><a href="http://localhost:5500/album-page.html?id=${jsonMoreArtist.data[i].album.id}"><h3>${jsonMoreArtist.data[i].album.title}</h3></a></div>`;
   }
   console.log(jsonMoreArtist.data[0].album);
 }
@@ -129,9 +130,9 @@ function displayTracks(tracksArray) {
     playSongDiv.classList.add("play-song");
     playSongDiv.innerHTML = track.rank;
     // creo il div della durata
-    let durationSongDiv = document.createElement('div')
-    durationSongDiv.classList.add('duration-song')
-    durationSongDiv.innerHTML = convertStoMs(track.duration)
+    let durationSongDiv = document.createElement("div");
+    durationSongDiv.classList.add("duration-song");
+    durationSongDiv.innerHTML = convertStoMs(track.duration);
     // inserisco il div number-title, il div ascolti e il div durata dentro al div principale (track-player)
     trackPlayerDiv.append(numberTitleDiv, playSongDiv, durationSongDiv);
     // inserisco il div principale dentro al container
@@ -171,7 +172,7 @@ function convertStoMs(seconds) {
   minutes = minutes < 10 ? "0" + minutes : minutes;
   extraSeconds = extraSeconds < 10 ? "0" + extraSeconds : extraSeconds;
   let risultato = minutes + ":" + extraSeconds;
-  return risultato
+  return risultato;
 }
 
 // Funzione per il menu dropdown
