@@ -394,11 +394,6 @@
   margin-right: 2rem;
   color: lightgray;
 }
-@media (max-width: 576px) {
-  .main-content-album #icon-bar i {
-    float: left;
-  }
-}
 .main-content-album #icon-bar i:hover {
   color: white;
 }
@@ -406,14 +401,12 @@
   font-size: 3rem;
   color: #1ed760;
 }
-@media (max-width: 576px) {
-  .main-content-album #icon-bar .fa-circle-play {
-    float: right;
-  }
-}
 .main-content-album #icon-bar .fa-circle-play:hover {
   color: #1ed760;
   scale: 1.1;
+}
+.main-content-album hr {
+  width: 100%;
 }
 .main-content-album .track-player {
   display: flex;
@@ -500,6 +493,7 @@
 .main-content-album #more-albums {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   gap: 3.6rem;
   overflow: hidden;
 }
