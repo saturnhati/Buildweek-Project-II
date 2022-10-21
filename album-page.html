@@ -91,16 +91,16 @@
             </div>
           </div>
           <div id="icon-bar">
-            <i class="fa-solid fa-circle-play"></i>
+            <button type="button" class="icon-bar-button"><i class="fa-solid fa-circle-play"></i></button>
             <i class="fa-regular fa-heart"></i>
             <i class="fa-regular fa-circle-down"></i>
             <i class="fa-solid fa-ellipsis"></i>
           </div>
           <div id="album-tracks">
             <div class="track-player track-player-header">
-              <div id="number-title">
+              <div class="number-title">
                 <div id="number">#</div>
-                <div id="title">TITOLO</div>
+                <div class="title">TITOLO</div>
               </div>
               <div id="play">RIPRODUZIONE</div>
               <div id="duration"><i class="fa-regular fa-clock"></i></div>
@@ -246,22 +246,22 @@
       </div>
     </main>
     <!-- BOTTOM PLAYER -->
-    <footer>
+     <footer>
       <div class="footer">
         <div class="player-listening">
-          <img src="./assets/img/caratterespeciale.png">
+          <img id="cover-listening" src="">
           <div class="listening-infos">
-            <p>mar+e</p>
-            <p>thasup</p>
+            <p id="title-listening"></p>
+            <p id="artist-listening"></p>
           </div>  
-          <i class="fa-solid fa-heart"></i>
+          <i id="icon-listening" class="fa-solid fa-heart icon-listening-none"></i>
         </div>
         <div class="player-main">
           <div class="player-icons">
             <i class="fa-solid fa-shuffle"></i>
             <i class="fa-solid fa-backward-step"></i>
-            <i class="fa-solid fa-circle-play" onclick="playAudio()"></i>
-            <i class="fa-solid fa-circle-pause icon-invisible" onclick="pauseAudio()"></i>
+            <i id="play-player" class="big fa-solid fa-circle-play" onclick="playAudio()"></i>
+            <i id="pause-player" class="big fa-solid fa-circle-pause icon-invisible" onclick="pauseAudio()"></i>
             <i class="fa-solid fa-forward-step"></i>
             <i class="fa-solid fa-repeat"></i>
           </div>
@@ -270,10 +270,8 @@
           </audio>
           <div class="player-bar">
             <span id="current-time">0:00</span>
-            <div class="progress-container" id="progress-container">
-              <div class="progress" id="progress"></div>
-            </div>
-            <span id="duration">2:06</span>
+            <progress id="audio-progress" min="0" max="30" value="0"></progress>
+            <span id="duration">0:30</span>
           </div>
         </div>
         <div class="player-opt">

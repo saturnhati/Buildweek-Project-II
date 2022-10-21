@@ -17,7 +17,7 @@ async function getAlbum() {
   console.log(tracksArray.title);
   console.log(tracksArray.indexOf(tracksArray[0]));
   displayCover(albumCover, albumArtist, albumTitle, albumRelease, albumTracks);
-  displayTracks(tracksArray, albumArtist);
+  displayTracks(tracksArray, albumArtist, albumCover);
 }
 
 function displayCover(
@@ -43,82 +43,22 @@ function displayCover(
   miniArtistImage.srcset = albumArtist.picture_small;
 }
 
-// async function getMoreAlbums() {
-//   let withoutYouAlbum = await fetch(
-//     "https://striveschool-api.herokuapp.com/api/deezer/album/352412657"
-//   );
-//   let withoutJson = await withoutYouAlbum.json();
-//   let withoutCover = withoutJson.cover;
-//   let withoutTitle = withoutJson.title;
-//   let withoutRelease = withoutJson.release_date;
-
-//   document.getElementById(
-//     "more-albums"
-//   ).innerHTML += `<div class="more-album-card"><img src=${withoutCover} /><h3>${withoutTitle}</h3><h4>${withoutRelease.slice(
-//     -10,
-//     4
-//   )}</h4></div>`;
-
-//   let placeDreamAlbum = await fetch(
-//     "https://striveschool-api.herokuapp.com/api/deezer/album/14229250"
-//   );
-//   let placeDreamJson = await placeDreamAlbum.json();
-//   let placeDreamCover = placeDreamJson.cover;
-//   let placeDreamTitle = placeDreamJson.title;
-//   let placeDreamRelease = placeDreamJson.release_date;
-
-//   document.getElementById(
-//     "more-albums"
-//   ).innerHTML += `<div class="more-album-card"><img src=${placeDreamCover} /><h3>${placeDreamTitle}</h3><h4>${placeDreamRelease.slice(
-//     -10,
-//     4
-//   )}</h4></div>`;
-
-//   let soundtrackAlbum = await fetch(
-//     "https://striveschool-api.herokuapp.com/api/deezer/album/248165312"
-//   );
-//   let soundtrackJson = await soundtrackAlbum.json();
-//   let soundtrackCover = soundtrackJson.cover;
-//   let soundtrackTitle = soundtrackJson.title;
-//   let soundtrackRelease = soundtrackJson.release_date;
-
-//   document.getElementById(
-//     "more-albums"
-//   ).innerHTML += `<div class="more-album-card"><img src=${soundtrackCover} /><h3>${soundtrackTitle}</h3><h4>${soundtrackRelease.slice(
-//     -10,
-//     4
-//   )}</h4></div>`;
-
-//   let coversAlbum = await fetch(
-//     "https://striveschool-api.herokuapp.com/api/deezer/album/352368357"
-//   );
-//   let coversJson = await coversAlbum.json();
-//   let coversCover = coversJson.cover;
-//   let coversTitle = coversJson.title;
-//   let coversRelease = coversJson.release_date;
-
-//   document.getElementById(
-//     "more-albums"
-//   ).innerHTML += `<div class="more-album-card"><img src=${coversCover} /><h3>${coversTitle}</h3><h4>${coversRelease.slice(
-//     -10,
-//     4
-//   )}</h4></div>`;
-// }
-
+//Funzione per prendere più album
 async function getArtistAlbums() {
+  //Fetch sull'album
   let pageAlbum = await fetch(
     `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`
   );
   let jsonPageAlbum = await pageAlbum.json();
   console.log(jsonPageAlbum.artist.id);
-
+  // Fetch sulla tracklist
   let moreAlbumArtist = await fetch(
     `https://striveschool-api.herokuapp.com/api/deezer/artist/${jsonPageAlbum.artist.id}/top?limit=4`
   );
   let jsonMoreArtist = await moreAlbumArtist.json();
   console.log(jsonMoreArtist);
   console.log(jsonMoreArtist.data[0].album);
-
+  //Prendo i dati da inserire nell'html
   document.querySelector(
     ".main-content-album"
   ).innerHTML += `<h2>Altro di ${jsonMoreArtist.data[0].artist.name}</h2>
@@ -131,26 +71,76 @@ async function getArtistAlbums() {
   }
 }
 
-function displayTracks(tracksArray, albumArtist) {
-  for (i = 0; i < tracksArray.length; i++) {
-    document.querySelector(
-      "#album-tracks"
-    ).innerHTML += `<div class="track-player"><div id="number-title">
-                <div id="song-number">${
-                  tracksArray.indexOf(tracksArray[i]) + 1
-                }</div>
-                <div id="song-artist">
-                  <div id="title">${tracksArray[i].title}</div>
-                  <div id="artist">${albumArtist.name}</div>
-                </div>
-              </div>
-              <div id="play-song">${tracksArray[i].rank}</div>
-              <div id="duration-song">${Math.round(
-                tracksArray[i].duration / 60
-              )}</div></div>`;
+//Funzione per visualizzare le tracce
+function displayTracks(tracksArray, albumArtist, albumCover) {
+  //Prendo il container
+  let container = document.querySelector("#album-tracks");
+  //for (i = 0; i < tracksArray.length; i++)
+  for (let track of tracksArray) {
+    //Creo il div con classe track-player
+    let trackPlayerDiv = document.createElement("div");
+    trackPlayerDiv.classList.add("track-player");
+    //Creo il div che contiene numero e bottone, titolo, nome artista
+    let numberTitleDiv = document.createElement("div");
+    numberTitleDiv.classList.add("number-title");
+    trackPlayerDiv.appendChild(numberTitleDiv);
+    //Creo il div con numero e bottone
+    let songNumberDiv = document.createElement("div");
+    songNumberDiv.classList.add("song-number");
+    //Ci metto il numero
+    songNumberDiv.innerHTML += tracksArray.indexOf(track) + 1;
+    //Creo il bottone
+    let buttonSongPlay = document.createElement("button");
+    buttonSongPlay.setAttribute("type", "button");
+    buttonSongPlay.classList.add("button-artist-song");
+    //QUI ANDRA' L'EVENT LISTENER
+    buttonSongPlay.addEventListener("click", () => {
+      playAudio(albumCover, albumArtist.name, track.title, track.preview);
+    });
+    //Creo l'icona
+    let icon = document.createElement("i");
+    icon.classList.add("fa-solid");
+    icon.classList.add("fa-play");
+    //Inserisco l'icona nel bottone
+    buttonSongPlay.appendChild(icon);
+    //Inserisco il bottone nel div
+    songNumberDiv.appendChild(buttonSongPlay);
+    //Inserisco numero e bottone nel numberTitleDiv
+    numberTitleDiv.appendChild(songNumberDiv);
+    //Creo il div per titolo e artista
+    let songArtistDiv = document.createElement("div");
+    songArtistDiv.classList.add("song-artist");
+    numberTitleDiv.appendChild(songArtistDiv);
+    //Creo il div per il titolo e ci metto il titolo di ogni canzone
+    let titleDiv = document.createElement("div");
+    titleDiv.classList.add("title");
+    titleDiv.innerHTML += track.title;
+    songArtistDiv.appendChild(titleDiv);
+    //Creo il div per l'artista e ci metto il nome
+    let artistNameDiv = document.createElement("div");
+    artistNameDiv.classList.add("artist");
+    artistNameDiv.innerHTML = albumArtist.name;
+    songArtistDiv.appendChild(artistNameDiv);
+    //Creo il div per il numero di ripetizioni
+    let playSongDiv = document.createElement("div");
+    playSongDiv.classList.add("play-song");
+    playSongDiv.innerHTML += track.rank;
+    trackPlayerDiv.appendChild(playSongDiv);
+    //Creo il div per la durata
+    let durationSongDiv = document.createElement("div");
+    durationSongDiv.classList.add("duration-song");
+    durationSongDiv.innerHTML += Math.round(track.duration / 60);
+    trackPlayerDiv.appendChild(durationSongDiv);
+
+    //Inserisco tutto nel container
+    container.appendChild(trackPlayerDiv);
   }
 }
 
+window.onload = () => {
+  getAlbum();
+  getArtistAlbums();
+};
 // Funzione per il menu dropdown
 function openDropdown() {
   let dropdown = document.querySelector("#dropdown-menu");
@@ -161,16 +151,58 @@ function openDropdown() {
   iconup.classList.toggle("invisible-icon");
 }
 
-//observer per lo sticky element
-// let stickyElement = document.querySelector(".track-player.track-player-header");
-// const observer = new IntersectionObserver(([e]) =>
-//   e.target.classList.add("sticky", e.intersectionRatio < 4.5)
-// );
+// Funzione per l'audio tag
+let player = document.querySelector("audio");
+let seekbar = document.querySelector("#seekbar");
+let playIcon = document.querySelector(".fa-circle-play");
+let pauseIcon = document.querySelector(".fa-circle-pause");
+let titleListening = document.querySelector("#title-listening");
+let artistListening = document.querySelector("#artist-listening");
+let coverListening = document.querySelector("#cover-listening");
+let iconListening = document.querySelector("#icon-listening");
+let progressBar = document.querySelector("#audio-progress");
+let progressValue = progressBar.value;
+let interval;
+let intervalProgress;
+let timer = document.querySelector("#current-time");
 
-// observer.observe(stickyElement);
+function playAudio(cover, artist, title, preview) {
+  playIcon.classList.add("icon-invisible");
+  pauseIcon.classList.remove("icon-invisible");
+  player.src = preview;
+  player.play();
+  coverListening.srcset = cover;
+  titleListening.innerHTML = title;
+  artistListening.innerHTML = artist;
+  iconListening.classList.remove("icon-listening-none");
+  progressValue = 0;
+  startProgress();
+  startTimer();
+}
 
-window.onload = () => {
-  getAlbum();
-  //getMoreAlbums();
-  getArtistAlbums();
-};
+function startTimer() {
+  let s = 1;
+  interval = setInterval(function () {
+    if (s < 10) {
+      timer.innerHTML = `0:0${s}`;
+    } else {
+      timer.innerHTML = `0:${s}`;
+    }
+    s++;
+  }, 1000);
+}
+
+function pauseAudio() {
+  playIcon.classList.remove("icon-invisible");
+  pauseIcon.classList.add("icon-invisible");
+  player.pause();
+  clearInterval(intervalProgress);
+  clearInterval(interval);
+}
+
+function startProgress() {
+  intervalProgress = setInterval(() => {
+    progressValue++;
+    progressBar.setAttribute("value", progressValue);
+  }, 1000);
+}
