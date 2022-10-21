@@ -1,7 +1,11 @@
 @import "./album-media-query";
 
 .main-content-album {
-  background: linear-gradient(180deg, rgba(88, 22, 66, 1) 0%, rgba(18, 18, 18, 1) 30%);
+  background: linear-gradient(
+    180deg,
+    rgba(88, 22, 66, 1) 0%,
+    rgba(18, 18, 18, 1) 30%
+  );
   display: flex;
   flex-direction: column;
   padding: {
