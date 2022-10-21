@@ -48,7 +48,7 @@ async function displayArtistPage() {
     // creo lo span artist
     let spanTime = document.createElement('span')
     spanTime.classList.add('artist-time')
-    spanTime.innerHTML = arrayArtistSong.duration
+    spanTime.innerHTML = convertStoMs(arrayArtistSong.duration)
     // inserisco gli ultimi due span nel div
     // div.appendChild(spanFoll)
     // div.appendChild(spanTime)
@@ -64,6 +64,16 @@ async function displayArtistPage() {
 
 window.onload = () => {
   displayArtistPage()
+}
+
+// Funzione per trasformare i secondi in minuti e secondi
+function convertStoMs(seconds) {
+  let minutes = Math.floor(seconds / 60);
+  let extraSeconds = seconds % 60;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  extraSeconds = extraSeconds< 10 ? "0" + extraSeconds : extraSeconds;
+  let risultato = minutes + ":" + extraSeconds;
+  return risultato
 }
 
 // Funzione per il menu dropdown

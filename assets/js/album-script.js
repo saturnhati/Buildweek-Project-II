@@ -114,7 +114,7 @@ function displayTracks(tracksArray) {
     // creo il div della durata
     let durationSongDiv = document.createElement('div')
     durationSongDiv.classList.add('duration-song')
-    durationSongDiv.innerHTML = Math.round(track.duration / 60)
+    durationSongDiv.innerHTML = convertStoMs(track.duration)
     // inserisco il div number-title, il div ascolti e il div durata dentro al div principale (track-player)
     trackPlayerDiv.append(numberTitleDiv, playSongDiv, durationSongDiv)
     // inserisco il div principale dentro al container
@@ -126,6 +126,16 @@ window.onload = () => {
   getAlbum();
   getArtistAlbums();
 };
+
+// Funzione per trasformare i secondi in minuti e secondi
+function convertStoMs(seconds) {
+  let minutes = Math.floor(seconds / 60);
+  let extraSeconds = seconds % 60;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  extraSeconds = extraSeconds< 10 ? "0" + extraSeconds : extraSeconds;
+  let risultato = minutes + ":" + extraSeconds;
+  return risultato
+}
 
 // Funzione per il menu dropdown
 function openDropdown() {
