@@ -9,21 +9,28 @@
   margin-top: 200px;
   margin-bottom: 5px;
 }
-.main-container .artist-hero h1 {
+.main-container .artist-hero a {
+  text-decoration: none;
+}
+.main-container .artist-hero a h1 {
   color: white;
   font-size: 5rem;
   margin-top: 0px;
   margin-bottom: 20px;
 }
 @media (max-width: 1200px) {
-  .main-container .artist-hero h1 {
+  .main-container .artist-hero a h1 {
     font-size: 3.5rem;
   }
 }
 @media (max-width: 992px) {
-  .main-container .artist-hero h1 {
+  .main-container .artist-hero a h1 {
     font-size: 2.5rem;
   }
+}
+.main-container .artist-hero a:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
 }
 .main-container .artist-hero p {
   color: white;
@@ -43,8 +50,8 @@
 .main-container .artist-page .artist-pad .buttonplay {
   text-align: center;
   background-color: #1ed760;
-  width: 58px;
-  height: 58px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   border: none;
   margin-right: 2.5rem;
@@ -151,6 +158,10 @@
   width: 40px;
   height: 40px;
 }
+.main-container .artist-page .artist-songs .popular-songs ol li .artist-imgtitle .artist-song:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
 .main-container .artist-page .artist-songs .popular-songs ol li .artist-followers {
   color: gray;
 }
@@ -207,10 +218,18 @@
 }
 .main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers h3:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
-.main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers p {
+.main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers a {
+  text-decoration: none;
+}
+.main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers a p {
   color: gray;
   font-size: 1rem;
+}
+.main-container .artist-page .artist-songs .favourite-songs .artist-like .artist-likers a a:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
 }
 
 @media (max-width: 992px) {

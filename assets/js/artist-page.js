@@ -10,9 +10,11 @@ async function displayArtistPage() {
   let objectArtistSongs = await apiArtistSongs.json()
   let arrayArtistSongs = objectArtistSongs.data
   console.log(arrayArtistSongs)
-  document.querySelector('h1').innerHTML = objectArtist.name
+  document.querySelector('.artist-hero .artist-link').innerHTML = `<a href="http://localhost:5500/artist-page.html?id=${objectArtist.id}"><h1>${objectArtist.name}</h1></a>`
   document.querySelector('.artist-hero p').innerHTML = `${objectArtist.nb_fan} ascoltatori mensili`
   document.querySelector('.artist-hero').style.backgroundImage = `url(${objectArtist.picture_xl})`
+  // let buttonPlay = document.querySelector('.buttonplay')
+  // buttonPlay.setAttribute('onclick', playAudio(arrayArtistSongs[0].album.cover_medium, arrayArtistSongs[0].artist.name, arrayArtistSongs[0].title, arrayArtistSongs[0].preview))
   for (const arrayArtistSong of arrayArtistSongs) {
     let container = document.getElementById('artist-list-songs')
     let listElement = document.createElement('li')
@@ -50,17 +52,26 @@ async function displayArtistPage() {
     spanTime.classList.add('artist-time')
     spanTime.innerHTML = convertStoMs(arrayArtistSong.duration)
     // inserisco gli ultimi due span nel div
-    // div.appendChild(spanFoll)
-    // div.appendChild(spanTime)
     // inserisco il div nell'li
     listElement.append(div, spanFoll, spanTime)
     // inserisco tutto nell'HTML
     container.appendChild(listElement)
   }
-  document.querySelector('.artist-likers p').innerHTML = `di ${objectArtist.name}`
+  document.querySelector('.artist-likers a').innerHTML = `<a href="http://localhost:5500/artist-page.html?id=${objectArtist.id}"><p>di ${objectArtist.name}</p></a>`
+  document.querySelector('.artist-hero p').innerHTML = `${objectArtist.nb_fan} ascoltatori mensili`
   document.querySelector('.artist-like img').src = objectArtist.picture_medium
 }
 
+let buttonPlay = document.querySelector('.buttonplay')
+buttonPlay.setAttribute('onclick', 'playButton()')
+async function playButton() {
+  let queryString = new URLSearchParams(window.location.search)
+  let id = queryString.get('id')
+  let apiArtistSongs = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`)
+  let objectArtistSongs = await apiArtistSongs.json()
+  let arrayArtistSongs = objectArtistSongs.data  
+  playAudio(arrayArtistSongs[0].album.cover_medium, arrayArtistSongs[0].artist.name, arrayArtistSongs[0].title, arrayArtistSongs[0].preview)
+}
 
 window.onload = () => {
   displayArtistPage()

@@ -12,17 +12,24 @@
       margin-top: 200px;
       margin-bottom: 5px;
     }
-    h1 {
-      color: white;
-      font-size: 5rem;
-      margin-top: 0px;
-      margin-bottom: 20px;
-      @include xl {
-        font-size: 3.5rem;
+    a{
+      text-decoration: none;
+      h1 {
+        color: white;
+        font-size: 5rem;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        @include xl {
+          font-size: 3.5rem;
+        }
+        @include lg {
+          font-size: 2.5rem;
+        }
       }
-      @include lg {
-        font-size: 2.5rem;
-      }
+    }
+    a:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
     }
     p {
       color: white;
@@ -41,8 +48,8 @@
       .buttonplay {
         text-align: center;
         background-color: #1ed760;
-        width: 58px;
-        height: 58px;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
         border: none;
         margin-right: 2.5rem;
@@ -135,6 +142,10 @@
                 width: 40px;
                 height: 40px;
               }
+              .artist-song:hover {
+                text-decoration: underline;
+                text-decoration-color: white;
+              }
             }
             .artist-followers {
               color: gray;
@@ -188,10 +199,18 @@
             }
             h3:hover {
               text-decoration: underline;
+              cursor: pointer;
             }
-            p {
-              color: gray;
-              font-size: 1rem;
+            a {
+              text-decoration: none;
+              p {
+                color: gray;
+                font-size: 1rem;
+              }
+              a:hover {
+                text-decoration: underline;
+                text-decoration-color: white;
+              }
             }
           }
         }
