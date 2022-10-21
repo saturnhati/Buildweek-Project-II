@@ -74,17 +74,17 @@ function displayTracks(tracksArray) {
     let numberTitleDiv = document.createElement('div')
     numberTitleDiv.classList.add('number-title')
     // creo il bottone
-    let buttonSongPlay = document.createElement('button')
-    buttonSongPlay.setAttribute('type', 'button')
-    buttonSongPlay.classList.add('button-album-song')
+    let buttonPlay = document.createElement('button')
+    buttonPlay.setAttribute('type', 'button')
+    buttonPlay.classList.add('button-album-song')
     // creo l'icona
     let icon = document.createElement('i')
     icon.classList.add('fa-solid')
     icon.classList.add('fa-play')
     // inserisco l'icona nel bottone
-    buttonSongPlay.appendChild(icon)
+    buttonPlay.appendChild(icon)
     // aggiungo l'event listener al bottone
-    buttonSongPlay.addEventListener('click', () => {
+    buttonPlay.addEventListener('click', () => {
       playAudio(track.album.cover_medium, track.artist.name, track.title, track.preview)
     })
     // creo il div del numerino
@@ -106,7 +106,7 @@ function displayTracks(tracksArray) {
     songArtistDiv.appendChild(titleDiv)
     songArtistDiv.appendChild(artistDiv)
     // inserisco bottone, div numerino e div info canzoni nel div number-title
-    numberTitleDiv.append(buttonSongPlay, songNumberDiv, songArtistDiv)
+    numberTitleDiv.append(buttonPlay, songNumberDiv, songArtistDiv)
     // creo il div degli ascolti
     let playSongDiv = document.createElement('div')
     playSongDiv.classList.add('play-song')
