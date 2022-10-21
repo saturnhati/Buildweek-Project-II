@@ -21,6 +21,7 @@ async function startSearch() {
     for (let result of results) {
         let cover = result.album.cover_medium
         let title = result.title
+        let titleId = result.album.id
         let artistId = result.artist.id
         let artist = result.artist.name
         let playUrl = result.preview
@@ -45,7 +46,7 @@ async function startSearch() {
         })
         // creo il titolo
         let songTitle = document.createElement('a')
-        songTitle.setAttribute('href', `http://localhost:5500/album-page.html?id=${title}`)
+        songTitle.setAttribute('href', `http://localhost:5500/album-page.html?id=${titleId}`)
         songTitle.innerHTML = title
         // creo il nome artista
         let songArtist = document.createElement('a')
