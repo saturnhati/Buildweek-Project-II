@@ -1,11 +1,7 @@
 @import "./album-media-query";
 
 .main-content-album {
-  background: linear-gradient(
-    180deg,
-    rgba(88, 22, 66, 1) 0%,
-    rgba(18, 18, 18, 1) 30%
-  );
+  background: linear-gradient(180deg, rgba(88, 22, 66, 1) 0%, rgba(18, 18, 18, 1) 30%);
   display: flex;
   flex-direction: column;
   padding: {
@@ -143,6 +139,7 @@
     .number-title {
       display: flex;
       width: 190px;
+      position: relative;
       #number {
         font-size: 1rem;
         margin: {
@@ -158,18 +155,24 @@
           color: grey;
         }
       }
+      .button-album-song {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        color: white;
+        position: absolute;
+        top: 7px;
+        left: 8px;
+        visibility: hidden;
+        i {
+          font-size: 1.1rem;
+        }
+      }
       .song-number {
         font-size: 1rem;
         margin: {
           left: 1rem;
           right: 1rem;
           top: 0.5rem;
-        }
-        .button-artist-song {
-          background-color: rgba(0, 0, 0, 0);
-          border: none;
-          color: white;
-          visibility: hidden;
         }
       }
     }
@@ -216,7 +219,7 @@
       bottom: 1rem;
     }
   }
-  .track-player:hover .number-title .song-number .button-artist-song {
+  .track-player:hover .number-title .button-album-song {
     visibility: visible;
   }
   .track-player:hover .number-title .song-number {

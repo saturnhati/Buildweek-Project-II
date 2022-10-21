@@ -365,6 +365,7 @@
 .main-content-album .track-player .number-title {
   display: flex;
   width: 190px;
+  position: relative;
 }
 .main-content-album .track-player .number-title #number {
   font-size: 1rem;
@@ -377,17 +378,23 @@
 .main-content-album .track-player .number-title .song-artist .artist {
   color: grey;
 }
+.main-content-album .track-player .number-title .button-album-song {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  visibility: hidden;
+}
+.main-content-album .track-player .number-title .button-album-song i {
+  font-size: 1.1rem;
+}
 .main-content-album .track-player .number-title .song-number {
   font-size: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 0.5rem;
-}
-.main-content-album .track-player .number-title .song-number .button-artist-song {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  color: white;
-  visibility: hidden;
 }
 .main-content-album .track-player #play {
   font-size: 1rem;
@@ -423,7 +430,7 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.main-content-album .track-player:hover .number-title .song-number .button-artist-song {
+.main-content-album .track-player:hover .number-title .button-album-song {
   visibility: visible;
 }
 .main-content-album .track-player:hover .number-title .song-number {

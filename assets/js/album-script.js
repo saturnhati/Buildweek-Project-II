@@ -76,7 +76,7 @@ function displayTracks(tracksArray) {
     // creo il bottone
     let buttonSongPlay = document.createElement('button')
     buttonSongPlay.setAttribute('type', 'button')
-    buttonSongPlay.classList.add('button-artist-song')
+    buttonSongPlay.classList.add('button-album-song')
     // creo l'icona
     let icon = document.createElement('i')
     icon.classList.add('fa-solid')
