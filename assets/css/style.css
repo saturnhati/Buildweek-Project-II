@@ -324,6 +324,10 @@
 .main-content-album #icon-bar {
   margin-top: 2rem;
 }
+.main-content-album #icon-bar .icon-bar-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
 .main-content-album #icon-bar i {
   font-size: 2rem;
   margin-right: 2rem;
@@ -358,26 +362,32 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.main-content-album .track-player #number-title {
+.main-content-album .track-player .number-title {
   display: flex;
   width: 190px;
 }
-.main-content-album .track-player #number-title #number {
+.main-content-album .track-player .number-title #number {
   font-size: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.main-content-album .track-player #number-title #song-artist #title {
+.main-content-album .track-player .number-title .song-artist .title {
   font-size: 1rem;
 }
-.main-content-album .track-player #number-title #song-artist #artist {
+.main-content-album .track-player .number-title .song-artist .artist {
   color: grey;
 }
-.main-content-album .track-player #number-title #song-number {
+.main-content-album .track-player .number-title .song-number {
   font-size: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 0.5rem;
+}
+.main-content-album .track-player .number-title .song-number .button-artist-song {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  visibility: hidden;
 }
 .main-content-album .track-player #play {
   font-size: 1rem;
@@ -392,17 +402,17 @@
   font-size: 1rem;
   margin-right: 3rem;
 }
-.main-content-album .track-player #play-song {
+.main-content-album .track-player .play-song {
   font-size: 1rem;
   margin-left: 10rem;
   margin-top: 0.5rem;
 }
 @media (max-width: 992px) {
-  .main-content-album .track-player #play-song {
+  .main-content-album .track-player .play-song {
     display: none;
   }
 }
-.main-content-album .track-player #duration-song {
+.main-content-album .track-player .duration-song {
   font-size: 1rem;
   margin-right: 3rem;
   margin-top: 0.5rem;
@@ -412,6 +422,12 @@
   border-radius: 10px;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.main-content-album .track-player:hover .number-title .song-number .button-artist-song {
+  visibility: visible;
+}
+.main-content-album .track-player:hover .number-title .song-number {
+  visibility: hidden;
 }
 .main-content-album #more-albums {
   display: flex;
